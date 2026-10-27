@@ -1,0 +1,5 @@
+# Artefactos pesados de la cuantización (modelos, llama.cpp, venv)
+work/
+*.gguf
+*.kld
+*.imatrix

@@ -1,0 +1,1 @@
+llama.cpp commit: 961c376 (2026-10-26)

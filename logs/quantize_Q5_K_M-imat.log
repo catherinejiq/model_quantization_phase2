@@ -1,0 +1,439 @@
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_compile_all: compiled 'fa_aux' library in 0.001 sec
+ggml_metal_library_compile_all: compiled 'fa_f16' library in 0.006 sec
+ggml_metal_library_compile_all: compiled 'fa_f32' library in 0.013 sec
+ggml_metal_library_compile_all: compiled 'fa_q4_0' library in 0.004 sec
+ggml_metal_library_compile_all: compiled 'fa_q4_1' library in 0.004 sec
+ggml_metal_library_compile_all: compiled 'fa_q5_0' library in 0.022 sec
+ggml_metal_library_compile_all: compiled 'fa_q5_1' library in 0.004 sec
+ggml_metal_library_compile_all: compiled 'fa_q8_0' library in 0.020 sec
+ggml_metal_library_compile_all: compiled 'fa_tensor' library in 0.004 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_f16' library in 0.022 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_f32' library in 0.019 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q4_0' library in 0.014 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q4_1' library in 0.017 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q5_0' library in 0.016 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q5_1' library in 0.019 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q8_0' library in 0.002 sec
+ggml_metal_library_compile_all: compiled 'mul_mv' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'mul_mv_mma' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'mul_mm' library in 0.010 sec
+ggml_metal_library_compile_all: compiled 'quantize' library in 0.011 sec
+ggml_metal_library_compile_all: compiled 'softmax' library in 0.000 sec
+ggml_metal_library_compile_all: compiled 'norm' library in 0.009 sec
+ggml_metal_library_compile_all: compiled 'unary' library in 0.003 sec
+ggml_metal_library_compile_all: compiled 'binbcast' library in 0.011 sec
+ggml_metal_library_compile_all: compiled 'reduce' library in 0.016 sec
+ggml_metal_library_compile_all: compiled 'tri' library in 0.010 sec
+ggml_metal_library_compile_all: compiled 'ssm' library in 0.010 sec
+ggml_metal_library_compile_all: compiled 'wkv' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'gated_delta_net' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'solve_tri' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'rope' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'conv' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'upscale' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'argsort' library in 0.010 sec
+ggml_metal_library_compile_all: compiled 'pool' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'misc' library in 0.007 sec
+ggml_metal_library_compile_all: loaded 36 libraries from embedded data in 0.023 sec (max single = 0.022 sec)
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M3)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 19069.67 MB
+version: 0.7.0-dev (build 1, commit 961c376)
+built with AppleClang 21.0.0.21000101 for Darwin arm64
+llama_quantize: quantizing '/Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/work/gguf/exaone4-1.2b-F16.gguf' to '/Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/work/gguf/exaone4-1.2b-Q5_K_M-imat.gguf' as Q5_K_M using 4 threads
+llama_model_loader: loaded meta data with 36 key-value pairs and 333 tensors from /Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/work/gguf/exaone4-1.2b-F16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = exaone4
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Exaone4 1.2b
+llama_model_loader: - kv   3:                           general.basename str              = exaone4
+llama_model_loader: - kv   4:                         general.size_label str              = 1.2B
+llama_model_loader: - kv   5:                            general.license str              = other
+llama_model_loader: - kv   6:                       general.license.name str              = exaone
+llama_model_loader: - kv   7:                       general.license.link str              = LICENSE
+llama_model_loader: - kv   8:                               general.tags arr[str,4]       = ["lg-ai", "exaone", "exaone-4.0", "te...
+llama_model_loader: - kv   9:                          general.languages arr[str,3]       = ["en", "ko", "es"]
+llama_model_loader: - kv  10:                        exaone4.block_count u32              = 30
+llama_model_loader: - kv  11:                     exaone4.context_length u32              = 65536
+llama_model_loader: - kv  12:                   exaone4.embedding_length u32              = 2048
+llama_model_loader: - kv  13:                exaone4.feed_forward_length u32              = 4096
+llama_model_loader: - kv  14:               exaone4.attention.head_count u32              = 32
+llama_model_loader: - kv  15:            exaone4.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  16:                     exaone4.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  17:   exaone4.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  18:               exaone4.attention.key_length u32              = 64
+llama_model_loader: - kv  19:             exaone4.attention.value_length u32              = 64
+llama_model_loader: - kv  20:                          general.file_type u32              = 1
+llama_model_loader: - kv  21:                         exaone4.vocab_size u32              = 102400
+llama_model_loader: - kv  22:               general.quantization_version u32              = 2
+llama_model_loader: - kv  23:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  24:                         tokenizer.ggml.pre str              = exaone4
+llama_model_loader: - kv  25:                      tokenizer.ggml.tokens arr[str,102400]  = ["[PAD]", "[BOS]", "[EOS]", "[UNK]", ...
+llama_model_loader: - kv  26:                  tokenizer.ggml.token_type arr[i32,102400]  = [3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, ...
+llama_model_loader: - kv  27:                      tokenizer.ggml.merges arr[str,101782]  = ["t h", "Ġ a", "Ġ í", "i n", "Ġ t...
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  29:                tokenizer.ggml.eos_token_id u32              = 361
+llama_model_loader: - kv  30:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  31:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  32:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  33:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  34:                    tokenizer.chat_template str              = {%- if not skip_think is defined %}\n ...
+llama_model_loader: - kv  35:                tokenizer.ggml.clean_spaces bool             = false
+llama_model_loader: - type  f32:  122 tensors
+llama_model_loader: - type  f16:  211 tensors
+
+llama_model_quantize_impl: have importance matrix data with 210 entries
+[   1/ 333] output_norm.weight                   - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[   2/ 333] rope_freqs.weight                    - [    32,      1,      1,      1], type =    f32, size =    0.000 MiB
+[   3/ 333] token_embd.weight                    - [  2048, 102400,      1,      1], type =    f16, 
+====== llama_model_quantize_impl: did not find weights for token_embd.weight
+converting to q6_K .. load_imatrix: imatrix datasets=['/Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/data/calib.txt']
+load_imatrix: loaded 210 importance matrix entries from /Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/work/gguf/exaone4-1.2b.imatrix computed on 1023 chunks
+prepare_imatrix: have 210 importance matrix entries
+size =   400.00 MiB ->   164.06 MiB
+[   4/ 333] blk.0.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[   5/ 333] blk.0.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[   6/ 333] blk.0.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[   7/ 333] blk.0.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[   8/ 333] blk.0.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[   9/ 333] blk.0.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[  10/ 333] blk.0.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[  11/ 333] blk.0.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  12/ 333] blk.0.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  13/ 333] blk.0.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  14/ 333] blk.0.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  15/ 333] blk.1.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  16/ 333] blk.1.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  17/ 333] blk.1.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  18/ 333] blk.1.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  19/ 333] blk.1.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  20/ 333] blk.1.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[  21/ 333] blk.1.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[  22/ 333] blk.1.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  23/ 333] blk.1.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  24/ 333] blk.1.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  25/ 333] blk.1.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  26/ 333] blk.2.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  27/ 333] blk.2.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  28/ 333] blk.2.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  29/ 333] blk.2.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  30/ 333] blk.2.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  31/ 333] blk.2.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[  32/ 333] blk.2.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[  33/ 333] blk.2.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  34/ 333] blk.2.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  35/ 333] blk.2.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  36/ 333] blk.2.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  37/ 333] blk.3.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  38/ 333] blk.3.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  39/ 333] blk.3.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  40/ 333] blk.3.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  41/ 333] blk.3.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  42/ 333] blk.3.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  43/ 333] blk.3.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  44/ 333] blk.3.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  45/ 333] blk.3.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  46/ 333] blk.3.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  47/ 333] blk.3.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  48/ 333] blk.4.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  49/ 333] blk.4.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  50/ 333] blk.4.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  51/ 333] blk.4.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  52/ 333] blk.4.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  53/ 333] blk.4.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  54/ 333] blk.4.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  55/ 333] blk.4.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  56/ 333] blk.4.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  57/ 333] blk.4.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  58/ 333] blk.4.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  59/ 333] blk.5.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  60/ 333] blk.5.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  61/ 333] blk.5.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  62/ 333] blk.5.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  63/ 333] blk.5.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  64/ 333] blk.5.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[  65/ 333] blk.5.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[  66/ 333] blk.5.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  67/ 333] blk.5.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  68/ 333] blk.5.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  69/ 333] blk.5.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  70/ 333] blk.6.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  71/ 333] blk.6.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  72/ 333] blk.6.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  73/ 333] blk.6.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  74/ 333] blk.6.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  75/ 333] blk.6.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  76/ 333] blk.6.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  77/ 333] blk.6.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  78/ 333] blk.6.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  79/ 333] blk.6.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  80/ 333] blk.6.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  81/ 333] blk.7.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  82/ 333] blk.7.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  83/ 333] blk.7.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  84/ 333] blk.7.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  85/ 333] blk.7.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  86/ 333] blk.7.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  87/ 333] blk.7.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  88/ 333] blk.7.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  89/ 333] blk.7.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[  90/ 333] blk.7.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  91/ 333] blk.7.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[  92/ 333] blk.8.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[  93/ 333] blk.8.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  94/ 333] blk.8.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  95/ 333] blk.8.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[  96/ 333] blk.8.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[  97/ 333] blk.8.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[  98/ 333] blk.8.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[  99/ 333] blk.8.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 100/ 333] blk.8.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 101/ 333] blk.8.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 102/ 333] blk.8.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 103/ 333] blk.9.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 104/ 333] blk.9.attn_k_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 105/ 333] blk.9.attn_output.weight             - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 106/ 333] blk.9.attn_q.weight                  - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 107/ 333] blk.9.attn_q_norm.weight             - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 108/ 333] blk.9.attn_v.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 109/ 333] blk.9.ffn_down.weight                - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 110/ 333] blk.9.ffn_gate.weight                - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 111/ 333] blk.9.ffn_up.weight                  - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 112/ 333] blk.9.post_attention_norm.weight     - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 113/ 333] blk.9.post_ffw_norm.weight           - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 114/ 333] blk.10.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 115/ 333] blk.10.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 116/ 333] blk.10.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 117/ 333] blk.10.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 118/ 333] blk.10.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 119/ 333] blk.10.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 120/ 333] blk.10.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 121/ 333] blk.10.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 122/ 333] blk.10.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 123/ 333] blk.10.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 124/ 333] blk.10.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 125/ 333] blk.11.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 126/ 333] blk.11.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 127/ 333] blk.11.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 128/ 333] blk.11.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 129/ 333] blk.11.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 130/ 333] blk.11.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 131/ 333] blk.11.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 132/ 333] blk.11.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 133/ 333] blk.11.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 134/ 333] blk.11.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 135/ 333] blk.11.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 136/ 333] blk.12.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 137/ 333] blk.12.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 138/ 333] blk.12.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 139/ 333] blk.12.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 140/ 333] blk.12.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 141/ 333] blk.12.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 142/ 333] blk.12.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 143/ 333] blk.12.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 144/ 333] blk.12.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 145/ 333] blk.12.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 146/ 333] blk.12.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 147/ 333] blk.13.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 148/ 333] blk.13.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 149/ 333] blk.13.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 150/ 333] blk.13.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 151/ 333] blk.13.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 152/ 333] blk.13.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 153/ 333] blk.13.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 154/ 333] blk.13.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 155/ 333] blk.13.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 156/ 333] blk.13.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 157/ 333] blk.13.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 158/ 333] blk.14.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 159/ 333] blk.14.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 160/ 333] blk.14.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 161/ 333] blk.14.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 162/ 333] blk.14.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 163/ 333] blk.14.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 164/ 333] blk.14.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 165/ 333] blk.14.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 166/ 333] blk.14.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 167/ 333] blk.14.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 168/ 333] blk.14.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 169/ 333] blk.15.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 170/ 333] blk.15.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 171/ 333] blk.15.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 172/ 333] blk.15.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 173/ 333] blk.15.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 174/ 333] blk.15.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 175/ 333] blk.15.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 176/ 333] blk.15.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 177/ 333] blk.15.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 178/ 333] blk.15.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 179/ 333] blk.15.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 180/ 333] blk.16.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 181/ 333] blk.16.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 182/ 333] blk.16.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 183/ 333] blk.16.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 184/ 333] blk.16.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 185/ 333] blk.16.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 186/ 333] blk.16.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 187/ 333] blk.16.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 188/ 333] blk.16.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 189/ 333] blk.16.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 190/ 333] blk.16.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 191/ 333] blk.17.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 192/ 333] blk.17.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 193/ 333] blk.17.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 194/ 333] blk.17.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 195/ 333] blk.17.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 196/ 333] blk.17.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 197/ 333] blk.17.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 198/ 333] blk.17.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 199/ 333] blk.17.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 200/ 333] blk.17.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 201/ 333] blk.17.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 202/ 333] blk.18.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 203/ 333] blk.18.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 204/ 333] blk.18.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 205/ 333] blk.18.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 206/ 333] blk.18.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 207/ 333] blk.18.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 208/ 333] blk.18.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 209/ 333] blk.18.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 210/ 333] blk.18.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 211/ 333] blk.18.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 212/ 333] blk.18.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 213/ 333] blk.19.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 214/ 333] blk.19.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 215/ 333] blk.19.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 216/ 333] blk.19.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 217/ 333] blk.19.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 218/ 333] blk.19.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 219/ 333] blk.19.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 220/ 333] blk.19.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 221/ 333] blk.19.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 222/ 333] blk.19.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 223/ 333] blk.19.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 224/ 333] blk.20.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 225/ 333] blk.20.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 226/ 333] blk.20.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 227/ 333] blk.20.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 228/ 333] blk.20.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 229/ 333] blk.20.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 230/ 333] blk.20.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 231/ 333] blk.20.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 232/ 333] blk.20.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 233/ 333] blk.20.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 234/ 333] blk.20.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 235/ 333] blk.21.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 236/ 333] blk.21.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 237/ 333] blk.21.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 238/ 333] blk.21.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 239/ 333] blk.21.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 240/ 333] blk.21.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 241/ 333] blk.21.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 242/ 333] blk.21.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 243/ 333] blk.21.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 244/ 333] blk.21.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 245/ 333] blk.21.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 246/ 333] blk.22.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 247/ 333] blk.22.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 248/ 333] blk.22.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 249/ 333] blk.22.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 250/ 333] blk.22.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 251/ 333] blk.22.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 252/ 333] blk.22.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 253/ 333] blk.22.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 254/ 333] blk.22.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 255/ 333] blk.22.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 256/ 333] blk.22.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 257/ 333] blk.23.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 258/ 333] blk.23.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 259/ 333] blk.23.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 260/ 333] blk.23.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 261/ 333] blk.23.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 262/ 333] blk.23.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 263/ 333] blk.23.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 264/ 333] blk.23.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 265/ 333] blk.23.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 266/ 333] blk.23.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 267/ 333] blk.23.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 268/ 333] blk.24.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 269/ 333] blk.24.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 270/ 333] blk.24.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 271/ 333] blk.24.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 272/ 333] blk.24.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 273/ 333] blk.24.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 274/ 333] blk.24.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 275/ 333] blk.24.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 276/ 333] blk.24.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 277/ 333] blk.24.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 278/ 333] blk.24.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 279/ 333] blk.25.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 280/ 333] blk.25.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 281/ 333] blk.25.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 282/ 333] blk.25.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 283/ 333] blk.25.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 284/ 333] blk.25.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 285/ 333] blk.25.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 286/ 333] blk.25.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 287/ 333] blk.25.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 288/ 333] blk.25.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 289/ 333] blk.25.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 290/ 333] blk.26.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 291/ 333] blk.26.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 292/ 333] blk.26.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 293/ 333] blk.26.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 294/ 333] blk.26.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 295/ 333] blk.26.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 296/ 333] blk.26.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 297/ 333] blk.26.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 298/ 333] blk.26.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 299/ 333] blk.26.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 300/ 333] blk.26.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 301/ 333] blk.27.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 302/ 333] blk.27.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 303/ 333] blk.27.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 304/ 333] blk.27.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 305/ 333] blk.27.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 306/ 333] blk.27.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 307/ 333] blk.27.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 308/ 333] blk.27.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 309/ 333] blk.27.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 310/ 333] blk.27.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 311/ 333] blk.27.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 312/ 333] blk.28.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 313/ 333] blk.28.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 314/ 333] blk.28.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 315/ 333] blk.28.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 316/ 333] blk.28.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 317/ 333] blk.28.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 318/ 333] blk.28.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 319/ 333] blk.28.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 320/ 333] blk.28.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 321/ 333] blk.28.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 322/ 333] blk.28.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 323/ 333] blk.29.attn_k.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
+[ 324/ 333] blk.29.attn_k_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 325/ 333] blk.29.attn_output.weight            - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 326/ 333] blk.29.attn_q.weight                 - [  2048,   2048,      1,      1], type =    f16, converting to q5_K .. size =     8.00 MiB ->     2.75 MiB
+[ 327/ 333] blk.29.attn_q_norm.weight            - [    64,      1,      1,      1], type =    f32, size =    0.000 MiB
+[ 328/ 333] blk.29.attn_v.weight                 - [  2048,    512,      1,      1], type =    f16, converting to q6_K .. size =     2.00 MiB ->     0.82 MiB
+[ 329/ 333] blk.29.ffn_down.weight               - [  4096,   2048,      1,      1], type =    f16, converting to q6_K .. size =    16.00 MiB ->     6.56 MiB
+[ 330/ 333] blk.29.ffn_gate.weight               - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 331/ 333] blk.29.ffn_up.weight                 - [  2048,   4096,      1,      1], type =    f16, converting to q5_K .. size =    16.00 MiB ->     5.50 MiB
+[ 332/ 333] blk.29.post_attention_norm.weight    - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+[ 333/ 333] blk.29.post_ffw_norm.weight          - [  2048,      1,      1,      1], type =    f32, size =    0.008 MiB
+llama_model_quantize_impl: model size  =  2440.49 MiB (16.00 BPW)
+llama_model_quantize_impl: quant size  =   882.54 MiB (5.79 BPW)
+
+llama_quantize: quantize time = 34391.25 ms
+llama_quantize:    total time = 34391.25 ms

@@ -1,0 +1,423 @@
+0.18.894.187 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.20.698.317 I cmn          init: llama threadpool init, n_threads = 4
+0.20.698.447 I 
+0.20.698.506 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.20.698.508 I compute_imatrix: tokenizing the input ..
+0.21.195.444 I compute_imatrix: tokenization took 496.929 ms
+0.21.195.583 I compute_imatrix: computing over 1023 chunks, n_ctx=512, batch_size=2048, n_seq=4
+0.27.858.272 I compute_imatrix: 6.66 seconds per pass - ETA 28.38 minutes
+[1]21.7890,[2]25.1528,[3]25.3310,[4]17.3680,[5]16.2424,[6]17.5135,[7]20.9608,[8]19.0040,0.37.136.870 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+0.37.136.873 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[9]17.1974,[10]17.9222,[11]19.8244,[12]18.9887,[13]18.7328,[14]19.0311,[15]20.8833,[16]20.2133,1.02.836.009 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+1.02.836.012 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[17]20.1849,[18]20.4598,[19]21.6568,[20]21.3577,[21]19.9960,[22]20.2329,[23]20.3700,[24]21.2610,[25]21.5152,[26]21.2621,[27]21.7287,[28]22.2586,1.33.700.531 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+1.33.700.540 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[29]22.1063,[30]22.0134,[31]22.1388,[32]22.9988,[33]23.3358,[34]22.0260,[35]21.6584,[36]21.9166,1.58.417.931 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+1.58.417.935 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[37]22.2396,[38]22.1888,[39]21.2082,[40]21.3140,[41]21.4017,[42]21.6580,[43]20.9852,[44]20.8583,[45]21.0120,[46]21.5170,[47]21.3788,[48]21.5289,2.30.204.519 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+2.30.204.522 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[49]21.5988,[50]22.0593,[51]22.0764,[52]21.9747,[53]22.2396,[54]22.1820,[55]21.5213,[56]21.5376,2.52.228.785 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+2.52.228.785 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[57]21.6289,[58]21.8359,[59]21.5149,[60]21.5002,[61]21.5837,[62]22.0158,[63]21.9506,[64]21.9326,[65]21.9933,[66]22.1555,[67]21.6407,[68]21.6689,3.19.471.024 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+3.19.471.028 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[69]21.7974,[70]22.0681,[71]21.7547,[72]21.7900,[73]21.8366,[74]22.2889,[75]22.2774,[76]22.1669,3.43.727.319 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+3.43.727.320 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[77]22.2412,[78]22.4194,[79]22.2791,[80]22.0989,[81]22.0073,[82]22.1934,[83]22.1950,[84]21.6780,[85]21.4222,[86]21.4147,[87]21.6416,[88]21.4043,4.09.892.639 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+4.09.892.648 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[89]21.3765,[90]21.4969,[91]21.5063,[92]21.1244,[93]20.9783,[94]21.0230,[95]21.2603,[96]21.0488,4.34.300.557 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+4.34.300.560 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[97]21.1097,[98]21.1495,[99]21.2571,[100]21.0262,[101]20.7470,[102]20.7009,[103]20.8439,[104]20.8413,[105]20.5118,[106]20.4301,[107]20.5323,[108]20.6140,4.55.473.634 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+4.55.473.637 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[109]20.6088,[110]20.3516,[111]20.3363,[112]20.4514,[113]20.4436,[114]20.1698,[115]20.1337,[116]20.2137,5.13.163.500 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+5.13.163.503 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[117]20.4350,[118]20.4299,[119]20.1479,[120]20.0051,[121]20.0078,[122]20.1658,[123]20.0460,[124]20.0155,[125]20.0920,[126]20.2995,[127]20.2642,[128]20.0510,5.31.502.670 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+5.31.502.673 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[129]20.0917,[130]20.1866,[131]20.2459,[132]19.9741,[133]19.9069,[134]19.9679,[135]20.1648,[136]20.1001,5.49.714.515 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+5.49.714.516 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[137]20.1207,[138]20.2166,[139]20.3782,[140]20.3790,[141]20.1662,[142]20.0753,[143]20.1096,[144]20.2652,[145]20.2193,[146]20.2036,[147]20.2370,[148]20.3868,6.08.208.733 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+6.08.208.736 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[149]20.3780,[150]20.2128,[151]20.1959,[152]20.2282,[153]20.3730,[154]20.3493,[155]20.2150,[156]20.1767,6.36.029.567 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+6.36.029.572 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[157]20.2354,[158]20.2433,[159]20.0629,[160]20.0613,[161]20.0904,[162]20.1802,[163]20.0814,[164]20.0493,[165]20.1637,[166]20.1810,[167]20.0252,[168]20.0338,7.03.054.981 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+7.03.054.990 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[169]20.0591,[170]20.2329,[171]20.2182,[172]19.9944,[173]19.9712,[174]19.9952,[175]20.1608,[176]20.1686,7.29.320.366 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+7.29.320.371 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[177]20.1350,[178]20.1926,[179]20.2667,[180]20.2595,[181]20.2371,[182]20.2879,[183]20.4276,[184]20.3805,[185]20.2293,[186]20.2065,[187]20.2589,[188]20.2464,7.51.281.636 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+7.51.281.643 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[189]20.2502,[190]20.2570,[191]20.4012,[192]20.3577,[193]20.3655,[194]20.3640,[195]20.4715,[196]20.4462,8.10.149.735 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+8.10.149.739 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[197]20.4292,[198]20.5024,[199]20.4963,[200]20.3275,[201]20.3591,[202]20.4222,[203]20.4457,[204]20.2652,[205]20.2278,[206]20.2588,[207]20.3878,[208]20.3340,8.29.189.459 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+8.29.189.461 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[209]20.3281,[210]20.3443,[211]20.4840,[212]20.4683,[213]20.3248,[214]20.3213,[215]20.3327,[216]20.4171,8.47.239.926 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+8.47.239.929 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[217]20.3589,[218]20.3512,[219]20.3940,[220]20.5130,[221]20.4656,[222]20.4498,[223]20.4936,[224]20.6047,[225]20.5874,[226]20.4317,[227]20.3915,[228]20.4096,9.05.634.519 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+9.05.634.521 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[229]20.5265,[230]20.4682,[231]20.2856,[232]20.2766,[233]20.3120,[234]20.3362,[235]20.2092,[236]20.1368,9.23.984.519 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+9.23.984.522 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[237]20.1509,[238]20.2178,[239]20.1442,[240]20.1340,[241]20.1629,[242]20.2459,[243]20.2512,[244]20.2526,[245]20.2631,[246]20.3485,[247]20.2857,[248]20.3125,9.42.611.889 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+9.42.611.892 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[249]20.3355,[250]20.3821,[251]20.2566,[252]20.2051,[253]20.1849,[254]20.2517,[255]20.2614,[256]20.1293,10.00.173.480 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+10.00.173.485 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[257]20.0561,[258]20.0585,[259]20.1181,[260]20.0337,[261]20.0130,[262]20.0406,[263]20.1355,[264]20.0884,[265]19.9419,[266]19.9272,[267]19.9645,[268]19.9569,10.18.338.163 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+10.18.338.166 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[269]19.8531,[270]19.8385,[271]19.8886,[272]19.9253,[273]19.9106,[274]19.8008,[275]19.8076,[276]19.8233,10.36.733.704 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+10.36.733.707 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[277]19.8854,[278]19.8591,[279]19.8461,[280]19.8994,[281]19.9018,[282]19.7876,[283]19.7635,[284]19.7821,[285]19.8612,[286]19.8257,[287]19.7310,[288]19.7080,10.55.251.440 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+10.55.251.444 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[289]19.7716,[290]19.7838,[291]19.7738,[292]19.8085,[293]19.8877,[294]19.8558,[295]19.8694,[296]19.8996,11.14.196.169 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+11.14.196.170 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[297]19.9569,[298]19.9693,[299]19.9819,[300]20.0607,[301]20.0445,[302]19.9556,[303]19.9562,[304]19.9795,[305]20.0453,[306]20.0391,[307]20.0530,[308]20.0794,11.33.239.149 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+11.33.239.153 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[309]20.0976,[310]19.9900,[311]19.9675,[312]19.9874,[313]20.0649,[314]20.0331,[315]20.0219,[316]20.0357,11.50.919.166 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+11.50.919.173 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[317]20.1254,[318]20.1262,[319]20.0614,[320]20.0482,[321]20.0789,[322]20.0708,[323]19.9914,[324]20.0090,[325]20.0246,[326]20.0601,[327]19.9648,[328]19.8496,12.09.604.094 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+12.09.604.100 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[329]19.8153,[330]19.8293,[331]19.9011,[332]19.8647,[333]19.8578,[334]19.8791,[335]19.9494,[336]19.9484,12.28.078.289 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+12.28.078.292 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[337]19.8957,[338]19.8776,[339]19.9231,[340]19.9138,[341]19.8534,[342]19.8419,[343]19.8853,[344]19.8938,[345]19.8882,[346]19.9134,[347]19.9846,[348]19.9834,12.49.609.200 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+12.49.609.203 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[349]19.9748,[350]20.0245,[351]20.0262,[352]20.0339,[353]20.0501,[354]20.1106,[355]20.1153,[356]20.0552,13.09.881.570 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+13.09.881.573 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[357]20.0414,[358]20.0888,[359]20.0961,[360]20.0058,[361]19.9948,[362]20.0222,[363]20.0164,[364]20.0245,[365]20.0418,[366]20.0947,[367]20.0853,[368]20.0766,13.28.228.723 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+13.28.228.727 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[369]20.0973,[370]20.1614,[371]20.1604,[372]20.1590,[373]20.1708,[374]20.2447,[375]20.2520,[376]20.2502,13.46.460.736 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+13.46.460.740 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[377]20.2870,[378]20.2860,[379]20.1857,[380]20.1543,[381]20.1571,[382]20.2065,[383]20.1804,[384]20.1800,[385]20.1938,[386]20.2626,[387]20.2545,[388]20.1617,14.04.690.945 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+14.04.690.948 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[389]20.1527,[390]20.1755,[391]20.2353,[392]20.2059,[393]20.1907,[394]20.2313,[395]20.2796,[396]20.2727,14.22.823.858 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+14.22.823.863 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[397]20.1955,[398]20.1990,[399]20.2345,[400]20.2479,[401]20.2247,[402]20.2538,[403]20.2791,[404]20.2641,[405]20.2392,[406]20.2552,[407]20.3165,[408]20.2662,14.41.364.874 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+14.41.364.878 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[409]20.2601,[410]20.2698,[411]20.3428,[412]20.3516,[413]20.3459,[414]20.3581,[415]20.3910,[416]20.3373,15.01.225.335 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+15.01.225.341 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[417]20.3253,[418]20.3379,[419]20.3954,[420]20.3636,[421]20.3635,[422]20.3750,[423]20.4497,[424]20.4507,[425]20.3632,[426]20.3315,[427]20.3459,[428]20.3992,15.19.202.748 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+15.19.202.751 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[429]20.3997,[430]20.4269,[431]20.4597,[432]20.4504,[433]20.3506,[434]20.3284,[435]20.3431,[436]20.3975,15.37.475.790 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+15.37.475.796 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[437]20.3706,[438]20.2897,[439]20.2915,[440]20.3015,[441]20.3530,[442]20.3191,[443]20.2747,[444]20.2559,[445]20.2881,[446]20.2975,[447]20.2187,[448]20.1846,15.56.036.479 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+15.56.036.482 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[449]20.1870,[450]20.2341,[451]20.2064,[452]20.1967,[453]20.2175,[454]20.2750,[455]20.2631,[456]20.2889,16.15.669.277 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+16.15.669.278 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[457]20.3032,[458]20.3421,[459]20.3413,[460]20.3263,[461]20.3551,[462]20.3613,[463]20.2849,[464]20.2512,[465]20.2568,[466]20.3007,[467]20.2759,[468]20.2071,16.35.939.258 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+16.35.939.259 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[469]20.1733,[470]20.1788,[471]20.2174,[472]20.2417,[473]20.2689,[474]20.3008,[475]20.2962,[476]20.2847,16.57.137.876 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+16.57.137.881 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[477]20.2995,[478]20.3518,[479]20.3483,[480]20.3398,[481]20.3782,[482]20.3828,[483]20.3139,[484]20.2960,[485]20.3046,[486]20.3595,[487]20.3426,[488]20.3245,17.16.967.861 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+17.16.967.865 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[489]20.3375,[490]20.3882,[491]20.3517,[492]20.2782,[493]20.2715,[494]20.2777,[495]20.3132,[496]20.3136,17.36.882.094 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+17.36.882.095 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[497]20.2862,[498]20.2990,[499]20.3217,[500]20.3186,[501]20.2518,[502]20.2320,[503]20.2459,[504]20.2966,[505]20.2685,[506]20.2414,[507]20.2475,[508]20.2888,17.56.932.537 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+17.56.932.540 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[509]20.2553,[510]20.1750,[511]20.1850,[512]20.1947,[513]20.2171,[514]20.1784,[515]20.1717,[516]20.2064,18.16.884.946 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+18.16.884.947 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[517]20.2082,[518]20.1327,[519]20.1318,[520]20.1403,[521]20.1608,[522]20.1117,[523]20.0460,[524]20.0118,[525]20.0051,[526]20.0415,[527]20.0467,[528]19.9935,18.36.815.042 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+18.36.815.045 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[529]19.9896,[530]19.9987,[531]20.0008,[532]19.9602,[533]19.9716,[534]19.9843,[535]20.0353,[536]20.0166,18.56.634.068 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+18.56.634.071 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[537]20.0265,[538]20.0366,[539]20.0645,[540]20.0212,[541]20.0124,[542]20.0308,[543]20.0763,[544]20.0742,[545]20.0216,[546]20.0138,[547]20.0198,[548]20.0519,19.16.398.110 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+19.16.398.113 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[549]20.0526,[550]20.0783,[551]20.0955,[552]20.1427,[553]20.1199,[554]20.1269,[555]20.1432,[556]20.1677,19.35.833.646 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+19.35.833.649 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[557]20.1270,[558]20.1366,[559]20.1430,[560]20.1953,[561]20.1911,[562]20.1905,[563]20.2132,[564]20.2460,[565]20.2397,[566]20.2371,[567]20.2512,[568]20.2893,19.54.296.470 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+19.54.296.473 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[569]20.2693,[570]20.2133,[571]20.1962,[572]20.2063,[573]20.2490,[574]20.2577,[575]20.2622,[576]20.2942,20.12.962.600 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+20.12.962.603 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[577]20.2953,[578]20.2627,[579]20.2611,[580]20.2698,[581]20.3043,[582]20.2807,[583]20.2265,[584]20.1572,[585]20.1583,[586]20.1724,[587]20.1786,[588]20.1280,20.32.023.997 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+20.32.023.999 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[589]20.1192,[590]20.1348,[591]20.1545,[592]20.1449,[593]20.1459,[594]20.1421,[595]20.1867,[596]20.1869,20.52.084.068 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+20.52.084.072 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[597]20.1824,[598]20.2022,[599]20.2247,[600]20.2199,[601]20.1642,[602]20.1653,[603]20.1714,[604]20.1858,[605]20.1291,[606]20.0732,[607]20.0816,[608]20.1012,21.11.802.477 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+21.11.802.480 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[609]20.1163,[610]20.0683,[611]20.0863,[612]20.1111,[613]20.1225,[614]20.0650,[615]20.0518,[616]20.0689,21.31.905.038 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+21.31.905.039 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[617]20.1038,[618]20.0994,[619]20.0350,[620]20.0327,[621]20.0387,[622]20.0558,[623]20.0051,[624]19.9387,[625]19.9472,[626]19.9670,[627]19.9796,[628]19.9821,21.53.321.311 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+21.53.321.313 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[629]19.9948,[630]20.0445,[631]20.0430,[632]20.0094,[633]20.0036,[634]20.0327,[635]20.0367,[636]19.9779,22.13.596.381 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+22.13.596.383 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[637]19.9515,[638]19.9527,[639]19.9836,[640]19.9607,[641]19.9573,[642]19.9692,[643]20.0104,[644]20.0106,[645]19.9600,[646]19.9132,[647]19.8616,[648]19.8606,22.33.357.816 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+22.33.357.817 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[649]19.8747,[650]19.8958,[651]19.8659,[652]19.8769,[653]19.8795,[654]19.9077,[655]19.9135,[656]19.9269,22.53.311.375 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+22.53.311.376 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[657]19.9489,[658]19.9432,[659]19.9036,[660]19.8726,[661]19.8842,[662]19.8941,[663]19.8968,[664]19.8978,[665]19.9046,[666]19.9497,[667]19.9511,[668]19.9504,23.13.726.433 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+23.13.726.436 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[669]19.9710,[670]20.0014,[671]19.9920,[672]19.9422,[673]19.9419,[674]19.9534,[675]19.9763,[676]19.9308,23.33.786.527 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+23.33.786.532 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[677]19.9064,[678]19.9091,[679]19.9319,[680]19.9111,[681]19.9076,[682]19.9165,[683]19.9405,[684]19.9097,[685]19.9020,[686]19.9144,[687]19.9456,[688]19.9454,23.54.358.444 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+23.54.358.447 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[689]19.9322,[690]19.9482,[691]19.9603,[692]19.9593,[693]19.9123,[694]19.8968,[695]19.9065,[696]19.9421,24.14.100.333 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+24.14.100.338 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[697]19.9217,[698]19.8807,[699]19.8766,[700]19.9010,[701]19.9095,[702]19.8645,[703]19.8678,[704]19.8789,[705]19.9020,[706]19.8722,[707]19.8630,[708]19.8709,24.34.188.972 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+24.34.188.976 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[709]19.9047,[710]19.8946,[711]19.8943,[712]19.9033,[713]19.9210,[714]19.9011,[715]19.8998,[716]19.9070,24.54.607.250 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+24.54.607.257 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[717]19.9462,[718]19.9488,[719]19.9477,[720]19.9694,[721]19.9959,[722]19.9977,[723]19.9946,[724]19.9953,[725]20.0310,[726]20.0159,[727]20.0106,[728]20.0238,25.13.674.472 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+25.13.674.473 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[729]20.0362,[730]20.0323,[731]20.0370,[732]20.0435,[733]20.0874,[734]20.0821,[735]20.0933,[736]20.0999,25.32.486.268 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+25.32.486.271 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[737]20.1361,[738]20.1367,[739]20.1371,[740]20.1451,[741]20.1763,[742]20.1645,[743]20.1618,[744]20.1631,[745]20.1931,[746]20.1692,[747]20.1170,[748]20.1233,25.51.011.354 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+25.51.011.361 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[749]20.1288,[750]20.1421,[751]20.1302,[752]20.1418,[753]20.1608,[754]20.1555,[755]20.1119,[756]20.0871,26.09.703.161 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+26.09.703.164 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[757]20.0797,[758]20.1025,[759]20.1077,[760]20.0667,[761]20.0433,[762]20.0495,[763]20.0685,[764]20.0411,[765]20.0463,[766]20.0497,[767]20.0681,[768]20.0400,26.28.572.242 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+26.28.572.246 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[769]20.0031,[770]19.9978,[771]20.0157,[772]20.0170,[773]19.9970,[774]19.9877,[775]20.0064,[776]20.0057,26.47.815.329 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+26.47.815.331 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[777]19.9711,[778]19.9580,[779]19.9621,[780]19.9897,[781]19.9642,[782]19.9654,[783]19.9723,[784]19.9886,[785]19.9791,[786]19.9940,[787]20.0168,[788]20.0086,27.06.621.701 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+27.06.621.703 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[789]19.9634,[790]19.9629,[791]19.9805,[792]19.9804,[793]19.9408,[794]19.9369,[795]19.9407,[796]19.9710,27.25.128.033 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+27.25.128.037 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[797]19.9725,[798]19.9784,[799]19.9844,[800]20.0047,[801]19.9729,[802]19.9224,[803]19.9291,[804]19.9359,[805]19.9517,[806]19.9206,[807]19.9202,[808]19.9245,27.43.701.622 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+27.43.701.625 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[809]19.9456,[810]19.9164,[811]19.9233,[812]19.9181,[813]19.9573,[814]19.9500,[815]19.9485,[816]19.9617,28.02.140.923 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+28.02.140.962 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[817]19.9932,[818]19.9924,[819]19.9890,[820]19.9980,[821]20.0259,[822]20.0070,[823]20.0120,[824]20.0213,[825]20.0344,[826]19.9986,[827]19.9568,[828]19.9684,28.21.087.746 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+28.21.087.749 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[829]19.9752,[830]19.9956,[831]19.9698,[832]19.9654,[833]19.9708,[834]20.0039,[835]20.0062,[836]19.9823,28.39.739.569 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+28.39.739.572 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[837]19.9813,[838]19.9874,[839]20.0209,[840]20.0266,[841]20.0260,[842]20.0480,[843]20.0712,[844]20.0695,[845]20.0452,[846]20.0527,[847]20.0596,[848]20.0853,28.59.440.500 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+28.59.440.503 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[849]20.0845,[850]20.0561,[851]20.0440,[852]20.0418,[853]20.0488,[854]20.0634,[855]20.0652,[856]20.0739,29.17.741.665 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+29.17.741.670 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[857]20.0991,[858]20.0983,[859]20.0651,[860]20.0682,[861]20.0752,[862]20.0945,[863]20.0845,[864]20.0498,[865]20.0578,[866]20.0634,[867]20.0872,[868]20.0749,29.36.774.877 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+29.36.774.878 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[869]20.0746,[870]20.0877,[871]20.0994,[872]20.0912,[873]20.0774,[874]20.0805,[875]20.1045,[876]20.1005,29.55.741.525 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+29.55.741.531 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[877]20.1079,[878]20.1225,[879]20.1282,[880]20.0955,[881]20.0861,[882]20.0942,[883]20.1175,[884]20.1165,[885]20.0968,[886]20.1022,[887]20.1255,[888]20.0946,30.15.411.996 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+30.15.411.996 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[889]20.0984,[890]20.1046,[891]20.1103,[892]20.0736,[893]20.0845,[894]20.1026,[895]20.1139,[896]20.1089,30.34.449.275 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+30.34.449.279 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[897]20.1252,[898]20.1436,[899]20.1453,[900]20.1449,[901]20.1474,[902]20.1766,[903]20.1696,[904]20.1278,[905]20.1198,[906]20.1287,[907]20.1554,[908]20.1516,30.53.948.792 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+30.53.948.795 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[909]20.1279,[910]20.1192,[911]20.1265,[912]20.1461,[913]20.1431,[914]20.1114,[915]20.0660,[916]20.0618,31.12.842.965 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+31.12.842.966 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[917]20.0718,[918]20.0994,[919]20.0901,[920]20.0859,[921]20.1005,[922]20.1059,[923]20.0744,[924]20.0645,[925]20.0720,[926]20.1003,[927]20.1058,[928]20.1024,31.31.985.795 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+31.31.985.796 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[929]20.1163,[930]20.1207,[931]20.1229,[932]20.1223,[933]20.1535,[934]20.1565,[935]20.1224,[936]20.1361,31.51.505.351 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+31.51.505.352 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[937]20.1419,[938]20.1536,[939]20.1386,[940]20.1158,[941]20.1121,[942]20.1323,[943]20.1326,[944]20.1226,[945]20.1272,[946]20.1533,[947]20.1559,[948]20.1230,32.10.218.574 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+32.10.218.577 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[949]20.1126,[950]20.1295,[951]20.1517,[952]20.1435,[953]20.1369,[954]20.1449,[955]20.1740,[956]20.1713,32.28.486.803 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+32.28.486.806 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[957]20.1680,[958]20.1733,[959]20.1994,[960]20.1984,[961]20.1694,[962]20.1755,[963]20.1792,[964]20.1911,[965]20.1659,[966]20.1484,[967]20.1500,[968]20.1637,32.46.934.869 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+32.46.934.872 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[969]20.1485,[970]20.1428,[971]20.1487,[972]20.1693,[973]20.1548,[974]20.1109,[975]20.0819,[976]20.0824,33.04.849.682 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+33.04.849.686 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[977]20.0879,[978]20.1023,[979]20.0784,[980]20.0597,[981]20.0567,[982]20.0717,[983]20.0746,[984]20.0464,[985]20.0283,[986]20.0241,[987]20.0391,[988]20.0419,33.22.457.770 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+33.22.457.775 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[989]20.0455,[990]20.0490,[991]20.0812,[992]20.0829,[993]20.0799,[994]20.0932,[995]20.1039,[996]20.1006,33.56.342.887 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+33.56.342.889 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[997]20.0632,[998]20.0641,[999]20.0741,[1000]20.0885,[1001]20.0892,[1002]20.0968,[1003]20.1217,[1004]20.1219,[1005]20.1047,[1006]20.1165,[1007]20.1306,[1008]20.1270,34.24.532.905 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+34.24.532.905 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[1009]20.0964,[1010]20.0749,[1011]20.0783,[1012]20.0842,[1013]20.1003,[1014]20.0628,[1015]20.0377,[1016]20.0345,34.44.328.889 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+34.44.328.892 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+[1017]20.0521,[1018]20.0532,[1019]20.0160,[1020]19.9913,[1021]19.9938,[1022]19.9992,[1023]20.0105,
+Final estimate: PPL = 20.0105 +/- 0.13055
+34.56.582.829 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+34.56.582.831 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+
+
