@@ -1,0 +1,2 @@
+archivo: calibracion_corregido.json
+sha256: 6f5f654dcfd03d9af3663f19a2a384cba92f57681e7bdef7d7d42f479e49b9a0

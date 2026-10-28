@@ -3,3 +3,4 @@ work/
 *.gguf
 *.kld
 *.imatrix
+**/work/

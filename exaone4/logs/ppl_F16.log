@@ -1,0 +1,12 @@
+0.00.267.973 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.667.099 I cmn          init: llama threadpool init, n_threads = 4
+0.00.725.506 I 
+0.00.725.524 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.00.725.741 I perplexity: saving all logits to /Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/exaone4/work/gguf/exaone4-1.2b-F16.kld.tmp
+0.00.725.751 I perplexity: tokenizing the input ..
+0.00.846.892 I perplexity: tokenization took 121.137 ms
+0.00.846.912 I perplexity: calculating perplexity over 30 chunks, n_ctx=512, batch_size=2048, n_seq=4
+0.07.331.052 I perplexity: 6.47 seconds per pass - ETA 0.80 minutes
+[1]21.7890,[2]25.1528,[3]25.3310,[4]18.0256,[5]15.6806,[6]16.5608,[7]18.7108,[8]19.0344,[9]18.8488,[10]19.4301,[11]21.3975,[12]22.1072,[13]23.0672,[14]24.7581,[15]24.4147,[16]23.6298,[17]23.8788,[18]25.4289,[19]25.7660,[20]24.9634,[21]25.0663,[22]26.2153,[23]26.2553,[24]25.8736,[25]26.0050,[26]26.5212,[27]25.2619,[28]25.0884,[29]25.2540,[30]25.2156,
+0.58.797.875 I Final estimate: PPL = 25.2156 +/- 0.96932
+

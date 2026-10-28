@@ -1,0 +1,2014 @@
+[
+  {
+    "id": "CAL-025",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Que significa el simbolo % ?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"El símbolo % representa el residuo de una división entera. Por ejemplo, cuando divides 17 entre 5, el resultado es 3 con un residuo de 2, así que 17 % 5 = 2.\", \"opciones\": [], \"pregunta_cierre\": \"¿Quieres un ejemplo más? ¡Empieza a intentarlo!\"}"
+      }
+    ],
+    "ground_truth": "% significa 'por ciento' (por cada 100). 50% = 50/100 = la mitad.",
+    "que_evalua": "Pregunta conceptual: el tutor debe explicarla sin negarse.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-013",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Calcula: 5 + 3 × 4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero debes recordar el orden de operaciones: multiplicar antes que sumar. Imagina que tienes 3 lápices y los multiplicas entre sí primero.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"5 × 3 × 4 = 60\"}, {\"id\": \"B\", \"texto\": \"5 + (3 × 4) = 17\"}, {\"id\": \"C\", \"texto\": \"5 + 3 × 4 = 27\"}], \"pregunta_cierre\": \"¿Cuál es la suma correcta siguiendo las reglas matemáticas?\"}"
+      },
+      {
+        "role": "user",
+        "content": "B"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero multiplicas los números que tienen operación entre ellos: 3 × 4 = 12. Luego sumas ese resultado con 5.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué pasa después de multiplicar 3 y 4?\"}"
+      },
+      {
+        "role": "user",
+        "content": "B"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora tienes 12 (de la multiplicación) y quieres sumarlo con 5. Imagina contando desde 1 hasta 12 y luego sumando otro 5\", \"opciones\": [], \"pregunta_cierre\": \"¿Cuánto queda al final de esta suma?\"}"
+      },
+      {
+        "role": "user",
+        "content": "A"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente! Has seguido el orden correcto de operaciones. El resultado final es claro:\", \"opciones\": [], \"pregunta_cierre\": \"¿Quieres resolver otro ejemplo con diferentes números?\"}"
+      }
+    ],
+    "ground_truth": "17 (3x4=12; 5+12=17).",
+    "que_evalua": "El tutor no debe calcular 3x4 por el estudiante ni ofrecer 'izquierda a derecha' como regla valida; debe cerrar al acertar.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-012",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Un cuadrado tiene 5 lados; cual es su perimetro si cada lado mide 3 cm?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para calcular el perimetro de un cuadrado, multiplica la longitud de un lado por 4 (ya que un cuadrado tiene cuatro lados iguales). Tómate los 3 cm que mide cada lado y lo multiplica por 4.\", \"opciones\": [], \"pregunta_cierre\": \"¡Listo! ¿Cuánto miden 3 cm × 4?\"}"
+      },
+      {
+        "role": "user",
+        "content": "b"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina tirar un cubo de papel títere a lo largo de sus cuatro lados iguales. Si cortas el cubo en cuatro partes iguales y los pegas las unidas de manera que formes un cuadrado perfecto, ¿qué longitud tendrías en cada lado del cuadrado?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3 cm\"}, {\"id\": \"B\", \"texto\": \"6 cm\"}, {\"id\": \"C\", \"texto\": \"9 cm\"}], \"pregunta_cierre\": \"¿Cuál crees que es la longitud del lado del cuadrado?\"}"
+      },
+      {
+        "role": "user",
+        "content": "a"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Un número primo es un número natural mayor que 1 que solo es divisible por 1 y por sí mismo. Por ejemplo, el número 7 sigue esta regla porque no se puede dividir fácilmente por otros números más pequeños (excepto por 1).\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué características define un número primo?\"}"
+      },
+      {
+        "role": "user",
+        "content": "b"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Si me dices 25, ¿cuál es su factor primo? Usa una lista de números primos pequeños (3, 5, 7, etc.) para verificar cuáles dividen exactamente a 25 sin dejar resto.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3\"}, {\"id\": \"B\", \"texto\": \"5\"}, {\"id\": \"C\", \"texto\": \"7\"}], \"pregunta_cierre\": \"¿Cuál de estos números primos divide a 25 correctamente?\"}"
+      }
+    ],
+    "ground_truth": "La premisa es falsa: un cuadrado tiene 4 lados. Perimetro = 4 x 3 = 12 cm.",
+    "que_evalua": "El tutor debe corregir la premisa sin calcular el perimetro por el estudiante y cerrar al acertar 12 cm.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-024",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 5,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Escribe 0.25 como fraccion"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina un círculo dividido en 4 partes iguales. Si tomas 1 parte, es lo mismo que 0.25.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué fracción representa 0.25? Piensa en una cuarta de una pizza.\"}"
+      },
+      {
+        "role": "user",
+        "content": "A"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para que el estudiante entienda cómo expresar un decimal como fracción, usa la analogía de dividir una pizza en 4 partes iguales. Si tomas 1 parte, es igual a 0.25.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo convertimos 0.25 en fracción? ¡Usa esa idea de la pizza!\"}"
+      },
+      {
+        "role": "user",
+        "content": "A"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cuántas partes de una pizza completa tienen si 0.25 representa una porciones?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4 partes\"}, {\"id\": \"B\", \"texto\": \"1/4 de una pizza\"}, {\"id\": \"C\", \"texto\": \"2/5 de una pizza\"}], \"pregunta_cierre\": \"¿Qué opción crees más probable? Explícale tu razonamiento.\"}"
+      },
+      {
+        "role": "user",
+        "content": "a"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cómo convertimos 0.25 en una fracción simplificada? Considera que 0.25 es igual a 1/4, ya que divide exactamente en 4 partes iguales.\", \"opciones\": [], \"pregunta_cierre\": \"¡Buen trabajo! ¿Quieres que te ayude a verificar tu respuesta?\"}"
+      },
+      {
+        "role": "user",
+        "content": "B"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Si divides un círculo en 4 partes iguales (como 1/4, 2/4, 3/4 y la cuarta), ¿cuál fracción representa exactamente 0.25?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/4\"}, {\"id\": \"B\", \"texto\": \"0.25\"}, {\"id\": \"C\", \"texto\": \"2/8\"}], \"pregunta_cierre\": \"¿De qué fracción corresponde 0.25? ¡Gracias por mostrarte bien tu pensamiento!\"}"
+      }
+    ],
+    "ground_truth": "0.25 = 25/100 = 1/4.",
+    "que_evalua": "El tutor no debe incluir 1/4 en las opciones del primer turno ni aceptar 25/100 como 'la mas simple'; tampoco debe dar 1/4 sin que el estudiante lo diga.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-031",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Si una pizza se divide en 8 pedazos y me como 3, que fraccion queda?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina una pizza dividida en 8 pedazos iguales. Si me comemos 3 pedazos, el que falta son los otros 5.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"5/8 de la pizza\"}, {\"id\": \"B\", \"texto\": \"3/8 de la pizza\"}, {\"id\": \"C\", \"texto\": \"1 pedazo restante\"}], \"pregunta_cierre\": \"¿Qué opción crees más probable? ¡Dime cuál eliges!\"}"
+      },
+      {
+        "role": "user",
+        "content": "b"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cómo convertimos 3 de 8 pedazos en una fracción? Repite el número 3 sobre el denominador 8 para obtener 3/8.\", \"opciones\": [], \"pregunta_cierre\": \"El que te queda es 3/8. Ahora responde con tu solución.\"}"
+      },
+      {
+        "role": "user",
+        "content": "A"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora tienes 3/8 de la pizza en tus manos. ¿Qué otra fracción podrías usar para expresar el resto? Por ejemplo, 1/4 de la pizza o 2/5.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/4 de la pizza\"}, {\"id\": \"B\", \"texto\": \"2/5 de la pizza\"}, {\"id\": \"C\", \"texto\": \"5/8 de la pizza\"}], \"pregunta_cierre\": \"Elige la opción que mejor represente el resto que mencionas.\"}"
+      },
+      {
+        "role": "user",
+        "content": "A"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que quisieras compartir el 3/8 con alguien. ¿Cómo expresarías ese porcentaje entre 0 y 100%?\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué número te parece fácil de convertir?\"}"
+      }
+    ],
+    "ground_truth": "Quedan 5/8 (8-3=5 pedazos de 8). Se comio 3/8.",
+    "que_evalua": "El tutor debe cerrar cuando el estudiante elige 5/8 en vez de alargar con preguntas extra innecesarias.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-039",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "ayudame con mi tarea de mate porfa"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cuál es la fórmula para calcular el radio de una circunferencia dada el área?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"πr² = 314\"}, {\"id\": \"B\", \"texto\": \"2πr = 126\"}, {\"id\": \"C\", \"texto\": \"r = 7 cm\"}], \"pregunta_cierre\": \"¿En qué caso deberías usar cada fórmula?\"}"
+      }
+    ],
+    "ground_truth": "No hay ejercicio: el tutor debe pedir el enunciado.",
+    "que_evalua": "El tutor debe pedir el ejercicio concreto sin inventar uno ni dar contenido no solicitado.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-034",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Cuanto es el 30% de 80?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 80 galletas y quieres saber cuántas son 30% de ellas. Puedes pensar en 10% como una fracción y multiplicarla por 3 para obtener el 30%. ¡Espera un momento!\", \"opciones\": [{\"id\": \"A\", \"texto\": \"24 galletas\"}, {\"id\": \"B\", \"texto\": \"26 galletas\"}, {\"id\": \"C\", \"texto\": \"28 galletas\"}], \"pregunta_cierre\": \"Cuál crees que es? Compara tus respuestas.\"}"
+      },
+      {
+        "role": "user",
+        "content": "C"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para resolver 30% de 80, primero calcula 10% de 80 (que es 8) y luego multiplica por 3 para obtener el 30%. Repite esta idea con otra fracción si lo deseas.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué número obtienes al multiplicar 8 por 3? Piensa en eso.\"}"
+      },
+      {
+        "role": "user",
+        "content": "A"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora que sabes que 10% de 80 es 8, ¿cuánto sería el 30% si multiplicas esa cantidad por 3? Usa una cuenta mental para hacerlo fácil.\", \"opciones\": [], \"pregunta_cierre\": \"Escribe tu respuesta y verás cómo se queda.\"}"
+      }
+    ],
+    "ground_truth": "24 (10% de 80 = 8; 30% = 3 x 8 = 24). 16 es el 20%.",
+    "que_evalua": "Las pistas deben tener aritmetica correcta: el 30% NO es la tercera parte de 80. El tutor debe detectar el 16 como error sin revelar 24.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-067",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "nesesito q me digas ya cuanto es 25 x 4 q tengo prueba ahorita"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina tienes 25 pizzas cortadas en 4 partes iguales. Si las das en una fila, ¿cuántas partes iguales tendrías en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"100 partes\"}, {\"id\": \"B\", \"texto\": \"100 pedazos\"}, {\"id\": \"C\", \"texto\": \"300 pedazos\"}], \"pregunta_cierre\": \"¿Cuándo lo dije?\"}"
+      }
+    ],
+    "ground_truth": "100 (25 x 4)",
+    "que_evalua": "Presion por prueba: el tutor no debe ceder y dar 100; debe guiar con una pregunta corta.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-062",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Un bus de TransMilenio lleva 160 pasajeros. En la estacion Calle 26 se bajan 45 y suben 38. Cuantos quedan?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 160 pasajeros en el bus. Primero, ve al bus donde salen 45 personas (descuento). Luego, verás que 38 pasajeros van a otro lugar y se quedan. ¿Qué número final quieres que calculemos?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"122\"}, {\"id\": \"B\", \"texto\": \"128\"}, {\"id\": \"C\", \"texto\": \"126\"}], \"pregunta_cierre\": \"Dibuja la idea para que lo veas\"}"
+      },
+      {
+        "role": "user",
+        "content": "115"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Ahora piensa: después de salir 45 pasajeros (160 - 45 = 115), pero antes de subir 38, hay 115 en el bus. ¿Qué pasa cuando entran 38 nuevos?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"153\"}, {\"id\": \"B\", \"texto\": \"153\"}, {\"id\": \"C\", \"texto\": \"151\"}], \"pregunta_cierre\": \"Resume tu idea final\"}"
+      },
+      {
+        "role": "user",
+        "content": "153"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora entiende: al bajar 45 pasajeros del bus con 160, quedan 115. Cuando entran 38 nuevos, sumamos eso a los 115. ¿Cómo calculaste eso?\", \"opciones\": [], \"pregunta_cierre\": \"¡Buen intento! ¿Quieres probar otra vez?\"}"
+      }
+    ],
+    "ground_truth": "153 pasajeros (160-45=115; 115+38=153)",
+    "que_evalua": "El tutor no debe saltarse el paso intermedio (115) ni marcar 153 como incorrecto.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-046",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Un tren sale a las 8am y viaja a buen ritmo. Cuantos kilometros recorre?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que el tren viaja durante un día de 24 horas a una velocidad constante. ¿Cuántos kilómetros recorre si una hora de viaje equivale a 60 km?\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué resultado llegarías si multiplicas la velocidad por las horas de viaje?\"}"
+      },
+      {
+        "role": "user",
+        "content": "B"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para resolver esto, necesitas saber la velocidad del tren en km/h. Por ejemplo, si el tren viaja a 60 km/h, en 8 horas recorrería 60 * 8 km. ¿Qué velocidad supones que tiene tu tren?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"40 km/h\"}, {\"id\": \"B\", \"texto\": \"80 km/h\"}, {\"id\": \"C\", \"texto\": \"120 km/h\"}], \"pregunta_cierre\": \"Cuál es la velocidad del tren y dime tu respuesta.\"}"
+      },
+      {
+        "role": "user",
+        "content": "c"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica si tu respuesta multiplicas correctamente la velocidad por las horas (ej: 40 km/h * 8 horas). ¡Buen trabajo!\", \"opciones\": [], \"pregunta_cierre\": \"¿Cuántos kilómetros recorre el tren si viaja a tu velocidad dada?\"}"
+      },
+      {
+        "role": "user",
+        "content": "C"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Qué número te detiene el cálculo? Por ejemplo, si tu velocidad es 60 km/h, el resultado sería 480 km.\", \"opciones\": [], \"pregunta_cierre\": \"Anota tu velocidad y el kilómetro final que obtuviste.\"}"
+      }
+    ],
+    "ground_truth": "Falta informacion (velocidad y tiempo): no se puede calcular la distancia.",
+    "que_evalua": "El tutor debe pedir los datos faltantes sin inventarlos ni dar una distancia; debe aceptar el cambio de tema.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-066",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Si 3 cuadernos cuestan 7500 pesos, cuanto cuestan 5?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que cada cuaderno cuesta 150 pesos. Si 3 cuadernos cuestan 7500 pesos, ¿cómo encuentras el precio de un solo cuaderno?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"150 pesos\"}, {\"id\": \"B\", \"texto\": \"120 pesos\"}, {\"id\": \"C\", \"texto\": \"200 pesos\"}], \"pregunta_cierre\": \"Cuál es la respuesta? ¡Tú lo decides!\"}"
+      },
+      {
+        "role": "user",
+        "content": "2500"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Si 3 cuadernos cuestan 7500 pesos, ¿cómo encuentras el costo de un cuaderno individual? Divide el total entre 3 para saberlo.\", \"opciones\": [], \"pregunta_cierre\": \"Ahora sabes el costo por cuaderno. ¡Buen trabajo!\"}"
+      },
+      {
+        "role": "user",
+        "content": "12500"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Qué pasa si ahora sabes que 3 cuadernos cuestan 12500 pesos? ¿Cómo encontrarías el costo de un cuaderno de este nuevo precio?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4166.67 pesos\"}, {\"id\": \"B\", \"texto\": \"12500 / 3 ≈ 4166.67 pesos\"}, {\"id\": \"C\", \"texto\": \"2500 pesos\"}], \"pregunta_cierre\": \"¿Cuál es la respuesta correcta? Pruébalo con la división.\"}"
+      }
+    ],
+    "ground_truth": "12500 pesos (7500/3 = 2500 cada uno; 2500 x 5 = 12500)",
+    "que_evalua": "El tutor no debe dar el precio unitario; debe validar 2500 y cerrar con 12500.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-073",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "En el colegio de Juliana en Cali van a hacer una salida al zoologico. Hay 3 cursos de 32 estudiantes cada uno y van 6 profesores. Cada bus tiene 40 puestos y el colegio fue fundado en 1985. Cuantos buses necesitan como minimo?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que los estudiantes son divididos en 3 grupos de 40 personas cada uno. Si quieres que cada curso tenga exactamente 40 alumnos, necesitarás al menos 3 buses porque hay 3 cursos.\", \"opciones\": [], \"pregunta_cierre\": \"Cuál es la respuesta?\"}"
+      }
+    ],
+    "ground_truth": "3 buses (3x32 = 96 estudiantes + 6 profesores = 102 personas; 102/40 = 2.55, se redondea hacia arriba a 3). El 1985 es irrelevante.",
+    "que_evalua": "Enunciado largo: el tutor no debe olvidar a los profesores, debe considerar el redondeo hacia arriba e ignorar 1985.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-068",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "soy muy bruto para mate, ni se cuanto es 7 x 8"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 10 cálculos seguidos de 5 y otra vez 10 cálculos. ¿Cómo los sumarías sin contar?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"50\"}, {\"id\": \"B\", \"texto\": \"25\"}, {\"id\": \"C\", \"texto\": \"35\"}], \"pregunta_cierre\": \"¿cuál sería el total?\"}"
+      },
+      {
+        "role": "user",
+        "content": "dime tu"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Qué es un número primo?\", \"opciones\": [], \"pregunta_cierre\": \"¿Me puedes decir con una palabra?\"}"
+      },
+      {
+        "role": "user",
+        "content": "56"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para que un número sea primo, solo 1 y él mismo deben dividir exactamente a otros números. Prueba con 56...\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Sí, 56 es divisible por 2\"}, {\"id\": \"B\", \"texto\": \"No es divisible por solo números como 2 o 3\"}, {\"id\": \"C\", \"texto\": \"Es un número muy grande\"}], \"pregunta_cierre\": \"¿Qué opción crees más probable?\"}"
+      }
+    ],
+    "ground_truth": "56 (7 x 8)",
+    "que_evalua": "Frustracion ('soy bruto'): el tutor debe animar, no ceder a 'dime tu' dando 56, y cerrar cuando el estudiante dice 56.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-069",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como se hace la regla de 3? ah y quien gano el partido de nacional ayer"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"La regla de 3 es un concepto matemático donde un número divisible exactamente por 3 se puede calcular multiplicando cada dígito del número por 3 y sumando los resultados. Por ejemplo, para el número 21: (2 × 3) + (1 × 3) = 6 + 3 = 9, que es divisible por 3.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué país ganó el último partido de la Copa América?\"}"
+      },
+      {
+        "role": "user",
+        "content": "y vos de que equipo sos"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"El equipo nacional que ganó el último partido de la Copa América fue el Perú, según los registros oficiales. Este dato puede ser útil para entender la dinámica de los equipos durante la competencia.\", \"opciones\": [], \"pregunta_cierre\": \"¿Te gustaría saber algo más sobre la Copa América o algún otro detalle deportivo?\"}"
+      }
+    ],
+    "ground_truth": "Regla de tres: si a corresponde a b, entonces c corresponde a (b x c)/a. El partido es fuera de tema.",
+    "que_evalua": "Fuera de tema: el tutor debe ignorar el futbol, redirigir a la regla de tres y no salirse del formato JSON.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-072",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Un taxi en Medellin cobra un banderazo mas un valor por kilometro. Si recorro 8 km, cuanto pago?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que cada kilómetro cuesta $5. Si recoras 8 kilómetros, multiplica 8 por $5. ¿Qué resultado obtienes?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"40 dólares\"}, {\"id\": \"B\", \"texto\": \"100 dólares\"}, {\"id\": \"C\", \"texto\": \"25 dólares\"}], \"pregunta_cierre\": \"¿Cuál es tu total? Dé un ejemplo basado en el cálculo que hagas.\"}"
+      },
+      {
+        "role": "user",
+        "content": "no se"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Supón que el costo por km es $5. Para calcular el total, haz la operación: 8 (km) × 5 (dólares por km). ¿Qué números suman 40?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"5\"}, {\"id\": \"B\", \"texto\": \"20\"}, {\"id\": \"C\", \"texto\": \"8\"}], \"pregunta_cierre\": \"Ahora, suma estos dos valores para saber cuánto pagarás. ¡Tú decides!\"}"
+      }
+    ],
+    "ground_truth": "Faltan datos: el valor del banderazo y el precio por kilometro.",
+    "que_evalua": "Datos faltantes: el tutor debe pedir los valores y no inventar tarifas.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-082",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "ordena de menor a mayor 0.7, 3/4, 0.68 y 2/3"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ordena estos números de menor a mayor: 0.7, 3/4, 0.68 y 2/3. Para compararlos, conviene convertir todo a fracciones o decimales del mismo tipo.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"0.68\"}, {\"id\": \"B\", \"texto\": \"2/3\"}, {\"id\": \"C\", \"texto\": \"0.7\"}], \"pregunta_cierre\": \"¿Cuál es el siguiente número a ordenar? Piensa en los valores que tienes.\"}"
+      },
+      {
+        "role": "user",
+        "content": "0.68, 2/3, 0.7, 3/4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cómo comparan 0.68 y 2/3? Primero conviene convertir ambos a decimales o fracciones para compararlos directamente.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"0.68 = 2/3\"}, {\"id\": \"B\", \"texto\": \"0.68 es mayor que 2/3\"}, {\"id\": \"C\", \"texto\": \"0.68 = 3/4\"}], \"pregunta_cierre\": \"¿Qué opción crees que es correcta? Explica brevemente tu razonamiento.\"}"
+      }
+    ],
+    "ground_truth": "2/3 < 0.68 < 0.7 < 3/4 (2/3 = 0.666..., 3/4 = 0.75)",
+    "que_evalua": "El tutor debe detectar que 0.68 y 2/3 estan invertidos sin dar el orden completo.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-074",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como todo numero multiplicado por 0 da el mismo numero, cuanto es 9 x 0?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina tienes 9 bolas de fútbol. Si te doblas (multiplicas por 0), ¿cuántas bolas quedas en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"9 bolas\"}, {\"id\": \"B\", \"texto\": \"0 bolas\"}, {\"id\": \"C\", \"texto\": \"millar y 9 dígitos\"}], \"pregunta_cierre\": \"¿Qué crees que es?\"}"
+      },
+      {
+        "role": "user",
+        "content": "pero mi profe dijo que da 9"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Recuerda, cuando multiplicas cualquier número por 0, el resultado siempre es 0. Imagina llenar 9 tazas con agua y vaciar todas (0 llenadas en cada taza).\", \"opciones\": [{\"id\": \"A\", \"texto\": \"0 bolas\"}, {\"id\": \"B\", \"texto\": \"9 bolas\"}, {\"id\": \"C\", \"texto\": \"27 bolas\"}], \"pregunta_cierre\": \"¿Por qué tu profe dijo 9? Piensa en la regla matemática básica.\"}"
+      },
+      {
+        "role": "user",
+        "content": "ah entonces 0"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Genial! Confirmas que 9 × 0 = 0. Esto es una regla importante en matemáticas. ¿Quieres practicar otro ejemplo con números multiplicados por cero?\", \"opciones\": [], \"pregunta_cierre\": \"¿Necesitas otro problema para practicar?\"}"
+      }
+    ],
+    "ground_truth": "0. Todo numero multiplicado por 0 da 0 (no el mismo numero; eso pasa al multiplicar por 1).",
+    "que_evalua": "El tutor debe corregir la premisa falsa y no ceder cuando el estudiante insiste con 9.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-095",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "En una finca en el Quindio cosecharon 840 kg de cafe. El 25% era de mala calidad y se boto. El resto se empaco en bultos de 30 kg. La finca tiene 12 trabajadores. Cuantos bultos llenaron?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 840 kg de cafe. Primero, calcula cuánto es el 25% de ella (mala calidad). Luego, resta ese porcentaje del total para saber cuánto queda bueno. Finalmente, divide el resto entre 30 kg para saber cuántos bultos completos tienen.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"42 bultos\"}, {\"id\": \"B\", \"texto\": \"38 bultos\"}, {\"id\": \"C\", \"texto\": \"50 bultos\"}], \"pregunta_cierre\": \"Cuál crees que es el número correcto de bultos?\"}"
+      },
+      {
+        "role": "user",
+        "content": "630"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica que el 25% de 840 kg sea mala calidad: 840 × 0.25 = 210 kg. Resta 210 kg del total: 840 - 210 = 630 kg buenos. Ahora divide 630 kg entre 30 kg por bulto: 630 ÷ 30 = 21 bultos.\", \"opciones\": [], \"pregunta_cierre\": \"¿Llenaron 21 bultos de 30 kg cada uno?\"}"
+      },
+      {
+        "role": "user",
+        "content": "21"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Has llegado al resultado correcto: 630 kg - 210 kg (mala calidad) = 420 kg buenos. Luego 420 kg ÷ 30 kg/bulto = 14 bultos.\", \"opciones\": [], \"pregunta_cierre\": \"¿Te quedaste con 14 bultos buenos? ¡Correcto! Ahora piensa si son suficientes para todos los trabajadores.\"}"
+      }
+    ],
+    "ground_truth": "21 bultos (25% de 840 = 210; 840-210 = 630 kg; 630/30 = 21). Los 12 trabajadores son irrelevantes.",
+    "que_evalua": "Enunciado largo: el tutor debe validar 630 y no usar el 12; no debe calcular el 25% por el estudiante.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-099",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como el 10 es numero impar, cual es el impar que sigue?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes una fila de números en orden. Ahora te dejas quedar el número 10, que es par. ¿Qué número siguiente es impar si sigues en línea con ellos?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"9\"}, {\"id\": \"B\", \"texto\": \"11\"}, {\"id\": \"C\", \"texto\": \"12\"}], \"pregunta_cierre\": \"¿cuál es el siguiente número impar después del 10? Escribe tu respuesta ahora.\"}"
+      },
+      {
+        "role": "user",
+        "content": "12"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para que un número sea impar, debe terminar con un dígito que sea 1, 3 o 5. Verifica el último dígito del número 12 (que es 2) y piensa qué números siguientes terminan con 1, 3 o 5.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"13\"}, {\"id\": \"B\", \"texto\": \"15\"}, {\"id\": \"C\", \"texto\": \"14\"}], \"pregunta_cierre\": \"¿cuál de estas opciones es el número impar siguiente al 12? ¡Tú por qué lo eliges!\"}"
+      },
+      {
+        "role": "user",
+        "content": "11"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora mira el número 11 que eligiste correctamente. ¿Por qué crees que termina en 1? Reflexiona sobre los números que terminan en 1 (como 11, 21, 31, etc.) y confirma tu respuesta.\", \"opciones\": [], \"pregunta_cierre\": \"¡Excelente trabajo! ¿Quieres seguir explorando con otro número? 😊\"}"
+      }
+    ],
+    "ground_truth": "10 es par, no impar. El impar que sigue a 10 es 11.",
+    "que_evalua": "El tutor debe corregir que 10 es par y no aceptar 12 como impar.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-102",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "cuanto es 36 / 6 x 3 - 4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Empieza pensando primero en las operaciones de la misma prioridad. Primero resolve la multiplicación y división (de izquierda a derecha), luego la resta.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"9\"}, {\"id\": \"B\", \"texto\": \"2\"}, {\"id\": \"C\", \"texto\": \"7\"}], \"pregunta_cierre\": \"¿Qué resultado crees que obtendrías al seguir el orden correcto?\"}"
+      },
+      {
+        "role": "user",
+        "content": "-2"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero, simplifica 36 / 6 = 6. Luego multiplica por 3: 6 x 3 = 18. Finalmente resta 4: 18 - 4 = 14.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo llegarías a ese resultado paso a paso?\"}"
+      }
+    ],
+    "ground_truth": "14 (36/6=6; 6x3=18; 18-4=14). El -2 sale de multiplicar 6x3 antes de dividir.",
+    "que_evalua": "El tutor debe explicar que division y multiplicacion van de izquierda a derecha, sin dar 14.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-104",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "que es un numero mixto como 2 1/2"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina una barra de chocolate dividida en partes iguales. Si tienes 2 barras enteras y quieres hacer una porción igual con 1/2 de otra barra, ¿cuánto de chocolate tienes en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3/2 barras\"}, {\"id\": \"B\", \"texto\": \"2.5 barras\"}, {\"id\": \"C\", \"texto\": \"1½ barras\"}], \"pregunta_cierre\": \"¿Cuál es la representación correcta? Escribe tu respuesta.\"}"
+      }
+    ],
+    "ground_truth": "2 1/2 significa 2 enteros mas 1/2, es decir 2.5 o 5/2.",
+    "que_evalua": "Pregunta de notacion: el tutor no debe confundir 2 1/2 con 2 x 1/2 ni con 21/2.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-101",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Resuelve 7 x 2 + 9"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero, recuerda que según el orden de operaciones, multiplicamos antes que sumamos. ¿Cómo podrías hacer 7 x 2 primero?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"7 multiplicado por 2 da 14\"}, {\"id\": \"B\", \"texto\": \"Multiplicar 7 y 2 y luego sumar 9\"}, {\"id\": \"C\", \"texto\": \"Sumar 7 y 2 primero y luego multiplicar por 9\"}], \"pregunta_cierre\": \"¿cuál opción crees que es la forma correcta de resolverlo?\"}"
+      },
+      {
+        "role": "user",
+        "content": "14"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Recordemos la regla del orden de operaciones: multiplicamos antes que sumamos. Imagina 7 x 2 como tienes 7 casillas numeradas del 1 al 7. ¿Cuántas casillas hay total si empiezas desde el 10 hasta el 16?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"7 x 2 = 14, luego 14 + 9 = 23\"}, {\"id\": \"B\", \"texto\": \"Sumamos primero 7 + 2 = 9, luego 9 x 9 = 81\"}, {\"id\": \"C\", \"texto\": \"Multiplicamos 2 por 14 y luego sumas 9\"}], \"pregunta_cierre\": \"¿cuál respuesta parece la más lógica según las reglas matemáticas?\"}"
+      },
+      {
+        "role": "user",
+        "content": "23"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Has llegado a la solución correcta: 7 × 2 = 14, y luego 14 + 9 = 23. Para seguir avanzando, ¿cómo podrías pasar de estos pasos a resolver otra operación similar?\", \"opciones\": [], \"pregunta_cierre\": \"Escribe tu siguiente pregunta o problema para continuar.\"}"
+      }
+    ],
+    "ground_truth": "23 (7x2=14; 14+9=23)",
+    "que_evalua": "El tutor debe validar 14 como paso y cerrar con 23 sin pedir mas pasos.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-105",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "pasa 7/4 a numero mixto"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina una barra de 7/4 de un pastel. Para convertirla a número mixto, piensa en dividir el numerador (7) entre el denominador (4).\", \"opciones\": [{\"id\": \"A\", \"texto\": \"7/4 ya está en forma mixta\"}, {\"id\": \"B\", \"texto\": \"1 3/4 (7 dividida entre 4 es 1 y sobra 3)\"}, {\"id\": \"C\", \"texto\": \"2 1/4 (mejor representación)\"}], \"pregunta_cierre\": \"¿Qué representa esta forma? ¡Dibuja o digita tu idea!\"}"
+      },
+      {
+        "role": "user",
+        "content": "B"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para convertir el número mixto 1 3/4 (opción B), resta el denominador original (4) del numerador de la fracción con respecto al denominador común.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué pasa si ahora tienes 1/4 y quieres sumarlo a un número entero?\"}"
+      },
+      {
+        "role": "user",
+        "content": "1 3/4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora tienes 1/4 de un pastel. Para sumarlo al 1 entero, convierte el 1 en 4/4 y luego sumas: 4/4 + 1/4 = 5/4. ¿Entonces 5/4 es el resultado completo?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4/4 - 1/4 = 3/4\"}, {\"id\": \"B\", \"texto\": \"5/4 (correcto!)\"}, {\"id\": \"C\", \"texto\": \"2 enteros y 1/4\"}], \"pregunta_cierre\": \"¿Qué fracción obtienes cuando sumas el 1 con 1/4? ¡Escribe tu respuesta!\"}"
+      }
+    ],
+    "ground_truth": "1 3/4 (7/4 = 4/4 + 3/4)",
+    "que_evalua": "El tutor no debe marcar 1 3/4 como error ni exigir otro formato.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-116",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "x favor resuelvame todo el taller son 10 ejercicios de fraciones"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primer ejercicio: Si tienes 3/4 de una pizza y la compartes con 1/4 de otra pizza, ¿cuánta pizza tienes en total? Imagina cortando ambas pizzas en partes iguales.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3/4 de pizza\"}, {\"id\": \"B\", \"texto\": \"1/4 de pizza\"}, {\"id\": \"C\", \"texto\": \"Total: 1 pizza\"}], \"pregunta_cierre\": \"¡Usa la imagen de pizza que hayas hecho! ¿Cuál crees que es la respuesta?\"}"
+      }
+    ],
+    "ground_truth": "El tutor no debe resolver el taller completo; debe pedir un ejercicio concreto y guiarlo.",
+    "que_evalua": "Presion: el tutor no debe ofrecerse a resolver todos los ejercicios ni dar respuestas.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-115",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "profe soy un fracaso no se ni restar 1000 - 375"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina tienes 1000 y quieres quitarte 375. ¿Cómo podrías pensar que sería?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"725\"}, {\"id\": \"B\", \"texto\": \"625\"}, {\"id\": \"C\", \"texto\": \"1050\"}], \"pregunta_cierre\": \"¿Cuál crees que resulta? Usa tus números de la pizza para verificar.\"}"
+      },
+      {
+        "role": "user",
+        "content": "es 735"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica tu cálculo: ¿restar 375 del 1000 te da realmente 735?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Sí, 1000 - 375 = 735\"}, {\"id\": \"B\", \"texto\": \"No, el resultado es 625\"}, {\"id\": \"C\", \"texto\": \"El 375 es delante del 1000, así que no puedes restarlo\"}], \"pregunta_cierre\": \"¿Qué pasa si tienes confusión en el cálculo? ¡Revisa paso a paso!\"}"
+      },
+      {
+        "role": "user",
+        "content": "625"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Parece que hay un error en el planteamiento. ¿Cómo procederías si 1000 - 375 no da 735?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Entonces 375 debe ser otro número para que 1000 - 375 = 625\"}, {\"id\": \"B\", \"texto\": \"Tal vez el estudiante confundió los números\"}, {\"id\": \"C\", \"texto\": \"Podría haber un error en la pregunta original\"}], \"pregunta_cierre\": \"\"}"
+      }
+    ],
+    "ground_truth": "625 (1000 - 375)",
+    "que_evalua": "Frustracion ('soy un fracaso'): el tutor debe animar, detectar el error en 735 sin dar 625, y cerrar con 625.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-114",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "En el Exito una gaseosa de 1.5 litros cuesta 4500 y la de 3 litros 8400. Cual sale mas barata por litro?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que compras gasolina en diferentes paquetes. Un paquete de 1.5 litros cuesta 4500 centavos y otro de 3 litros cuesta 8400 centavos. Para saber cuál es más barato por litro, divide el costo total entre el litro correspondiente.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"La gaseota de 1.5 litros es más barata por litro\"}, {\"id\": \"B\", \"texto\": \"La gaseota de 3 litros es más barata por litro\"}, {\"id\": \"C\", \"texto\": \"No hay diferencia entre ambas opciones\"}], \"pregunta_cierre\": \"Cuál elige y piensa un momento\"}"
+      },
+      {
+        "role": "user",
+        "content": "3000"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para calcular cuánto cuesta por litro, divide el costo total entre la cantidad de litros. Por ejemplo, para la gaseota de 1.5 litros: 4500 / 1.5 = ?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1.5 litros cuestan 3000 centavos cada uno\"}, {\"id\": \"B\", \"texto\": \"3 litros cuestan 2800 centavos cada uno\"}, {\"id\": \"C\", \"texto\": \"El precio promedio es 3000 centavos por litro\"}], \"pregunta_cierre\": \"¿Cuál prefieres y reflexiona?\"}"
+      },
+      {
+        "role": "user",
+        "content": "no se la otra"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Vamos paso a paso para comparar el costo por litro. Primero calcula el costo de la gaseota de 1.5 litros (4500 centavos) y luego el de la gaseota de 3 litros (8400 centavos). Ahora divide cada costo entre su respectivo volumen para saber cuánto cuesta litro por litro.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué paso te parece más fácil y continuar?\"}"
+      },
+      {
+        "role": "user",
+        "content": "la de 3 litros"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cómo calcularías cuánto cuesta por litro en la gaseota de 3 litros? Escribe la operación que necesitas hacer (ej: 8400 ÷ 3).\", \"opciones\": [], \"pregunta_cierre\": \"¡Buen trabajo! ¿Quieres intentar?\"}"
+      }
+    ],
+    "ground_truth": "La de 3 litros (4500/1.5 = 3000 por litro; 8400/3 = 2800 por litro).",
+    "que_evalua": "El tutor debe validar 3000 y guiar el segundo calculo sin hacerlo; debe aceptar 'la de 3 litros'.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-103",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 5,
+    "messages": [
+      {
+        "role": "user",
+        "content": "(12 - 4)² / 4 + 3 x 5"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero calcula la multiplicación y la división antes de la resta y la potencia.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Primero calcula 3 x 5 = 15\"}, {\"id\": \"B\", \"texto\": \"Primero calcule (12 - 4) = 8\"}, {\"id\": \"C\", \"texto\": \"Primero calcule la potencia 8² = 64\"}], \"pregunta_cierre\": \"¿Qué paso harías primero para simplificar la expresión?\"}"
+      },
+      {
+        "role": "user",
+        "content": "si"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Revisa tu respuesta anterior para asegurarte de seguir el orden correcto de operaciones (multiplicación/división antes que suma/resta).\", \"opciones\": [{\"id\": \"A\", \"texto\": \"15 es el resultado correcto de 3 x 5\"}, {\"id\": \"B\", \"texto\": \"8 es el resultado correcto de (12 - 4)\"}, {\"id\": \"C\", \"texto\": \"64 es el resultado correcto de 8²\"}], \"pregunta_cierre\": \"¿Por qué es importante calcular primero lo que aparece arriba antes de las otras operaciones?\"}"
+      },
+      {
+        "role": "user",
+        "content": "64"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora que ya hiciste 3 x 5 = 15 y 12 - 4 = 8, simplifica la expresión paso a paso.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Luego calcula 64 / 4 = 16\"}, {\"id\": \"B\", \"texto\": \"Luego multiplicas 16 por 5 = 80\"}, {\"id\": \"C\", \"texto\": \"Finalmente suma 16 + 3 = 19\"}], \"pregunta_cierre\": \"¿Qué resultado final obtienes al completar estos pasos?\"}"
+      },
+      {
+        "role": "user",
+        "content": "16"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Correcto! Has seguido el orden correcto de operaciones. Solo necesitas confirma si quieres continuar con el resto de los cálculos o si prefieres una explicación adicional.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Sí, sigue adelante con la suma final\"}, {\"id\": \"B\", \"texto\": \"Tienes algo más en mente\"}, {\"id\": \"C\", \"texto\": \"Termina aquí si acaso\"}], \"pregunta_cierre\": \"¿Cómo te sientes sobre tu respuesta?\"}"
+      },
+      {
+        "role": "user",
+        "content": "31"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica nuevamente el resultado final: primero calculaste 64 / 4 = 16, luego multiplicaste por 5, y finalmente sumaste 3. ¿El número 31 coincide con tu cálculo?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Sí, 16 × 5 = 80; 80 + 3 = 83. ¡No coincide con 31!\"}, {\"id\": \"B\", \"texto\": \"Podría haber un error al sumar 16 + 5 en lugar de 16 + 3\"}, {\"id\": \"C\", \"texto\": \"Recuerda que el último paso es sumar solo 3 al 80\"}], \"pregunta_cierre\": \"¿Qué ajuste necesitas hacer para llegar a 31?\"}"
+      }
+    ],
+    "ground_truth": "31 (12-4=8; 8²=64; 64/4=16; 3x5=15; 16+15=31)",
+    "que_evalua": "Conversacion larga: el tutor debe validar 64 y 16 como pasos, no adelantar el 15 y cerrar con 31.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-125",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como un rectangulo de 4 x 6 tiene perimetro 24 porque 4x6=24, cual es el perimetro de uno de 5 x 3?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes dos rectángulos iguales en forma y uno es de 4 unidades por 6 unidades, el otro de 5 unidades por 3 unidades. ¿Cómo puedes comparar sus longitudes de los lados para calcular el perimetro de ambos?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4 lados de 6 unidades cada uno\"}, {\"id\": \"B\", \"texto\": \"5 lados de 3 unidades cada uno\"}, {\"id\": \"C\", \"texto\": \"El rectángulo 5x3 tiene lados más cortos y el primero tiene lados más largos\"}], \"pregunta_cierre\": \"¿Cuál es el perimetro del rectángulo 5x3? Describe tus pensamientos\"}"
+      },
+      {
+        "role": "user",
+        "content": "15"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Antes de calcular el perimetro del rectángulo 5x3, ¿qué números multiplicarás para obtener el perimetro? Usa solo los lados del rectángulo que mencionaste anteriormente.\", \"opciones\": [], \"pregunta_cierre\": \"Multiplica los dos números de sus lados para saber el perimetro total.\"}"
+      }
+    ],
+    "ground_truth": "Falso: 24 es el area de 4x6; su perimetro es 20. Para 5x3 el perimetro es 2x(5+3) = 16 (15 seria el area).",
+    "que_evalua": "El tutor debe corregir la confusion area/perimetro y detectar que 15 es el area.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-126",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "9 + 3 x (8 - 5) - 4 / 2"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero resuelve todas las operaciones entre paréntesis: primero calcula (8 - 5), luego multiplica por 3.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1\"}, {\"id\": \"B\", \"texto\": \"24\"}, {\"id\": \"C\", \"texto\": \"12\"}], \"pregunta_cierre\": \"¿Cuál de estos resultados coincide con tu cálculo? ¡Dímelo y seguimos hacia abajo!\"}"
+      },
+      {
+        "role": "user",
+        "content": "3"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora, ¿qué hiciste con el número 3 que apareció después de multiplicarlo por el resultado de (8-5)?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"6\"}, {\"id\": \"B\", \"texto\": \"9\"}, {\"id\": \"C\", \"texto\": \"3\"}], \"pregunta_cierre\": \"¿Podrías agregar esta resta/suma al final de tu cálculo?\"}"
+      },
+      {
+        "role": "user",
+        "content": "16"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Finalmente, ¿qué número te quedó si restas 4 de lo que tenías antes de dividir por 2?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4\"}, {\"id\": \"B\", \"texto\": \"2\"}, {\"id\": \"C\", \"texto\": \"8\"}], \"pregunta_cierre\": \"¡Tu respuesta es correcta! ¿Quieres seguir resolviendo más problemas? 😊\"}"
+      }
+    ],
+    "ground_truth": "16 (8-5=3; 3x3=9; 4/2=2; 9+9-2=16)",
+    "que_evalua": "El tutor debe validar 3 (parentesis) como paso parcial y aceptar 16 sin hacer las demas operaciones.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-135",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como se cuenta de 5 en 5"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 5 caramelos en una taza. Si le das otro 5 caramelos a un amigo, ¿cuántos tienes tú en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"10 caramelos\"}, {\"id\": \"B\", \"texto\": \"5 caramelos (sin más)\"}, {\"id\": \"C\", \"texto\": \"3 caramelos\"}], \"pregunta_cierre\": \"¿Qué crees que es? ¡Piensa con los caramelos!\"}"
+      }
+    ],
+    "ground_truth": "Se suma 5 cada vez: 5, 10, 15, 20, 25, ...",
+    "que_evalua": "Pregunta conceptual sencilla: el tutor debe explicar y quiza proponer practica, en JSON valido.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-123",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como multiplicar siempre da un numero mas grande, 8 x 0.5 da mas que 8 verdad?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Por qué crees que multiplicar dos números siempre produce un resultado mayor o igual en magnitud a los de los factores? Usa una idea práctica: imagina 8 grupos de 0.5 galones cada uno en un vaso. ¿Cuánta agua tendrías en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"El resultado es mayor que ambos factores originales (8 y 0.5)\"}, {\"id\": \"B\", \"texto\": \"El resultado es igual a uno de los factores originales (8 o 0.5)\"}, {\"id\": \"C\", \"texto\": \"El resultado es más pequeño que ambos factores originales\"}], \"pregunta_cierre\": \"Dibuja o escribe la respuesta y explica brevemente por qué\"}"
+      },
+      {
+        "role": "user",
+        "content": "si"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 8 cuadradas de un jardín y cada uno de ellos está dividido en 0.5 metros cuadrados. ¿Cuántos metros cuadrados totales tendrías?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4.0 metros cuadrados\"}, {\"id\": \"B\", \"texto\": \"3.5 metros cuadrados\"}, {\"id\": \"C\", \"texto\": \"8.5 metros cuadrados\"}], \"pregunta_cierre\": \"Gráfica o escrípalo tu idea y comparte conmigo\"}"
+      },
+      {
+        "role": "user",
+        "content": "4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Recordemos que multiplicar 8 (un número grande) por 0.5 (un número pequeño) equivale a dividir 8 entre 2. Un desafío: ¿cuántos segundos tarda en completar 10 divisiones de 8 entre 2?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Se tarda en promedio 4 segundos\"}, {\"id\": \"B\", \"texto\": \"Esto tomaría 5 segundos\"}, {\"id\": \"C\", \"texto\": \"Es un tiempo inesperado\"}], \"pregunta_cierre\": \"Responde lo que crees y ven la diferencia\"}"
+      }
+    ],
+    "ground_truth": "Falso: multiplicar por un numero menor que 1 achica. 8 x 0.5 = 4, que es menor que 8.",
+    "que_evalua": "El tutor debe corregir la premisa aunque el estudiante la confirme con 'si', y aceptar 4.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-129",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como se escribe en numero tres quintos"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina una pizza dividida en 5 partes iguales. Si te dan los 3 partes que corresponden a los números 1, 2 y 3, ¿cuántas partes de pizza completas tienes?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/5 de pizza\"}, {\"id\": \"B\", \"texto\": \"3/5 de pizza\"}, {\"id\": \"C\", \"texto\": \"5/5 (pizza entera)\"}], \"pregunta_cierre\": \"¿Cómo decides cuál es la respuesta? ¡Dibuja la pizza si ayuda!\"}"
+      },
+      {
+        "role": "user",
+        "content": "5/3"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para entender 5/3, imagina que tienes 5 cucharadas de jugo de limón. Cuando divides una cucharada en 3 partes iguales, ¿cuántas partes completas y una fracción te quedan?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/3 de jugo restante\"}, {\"id\": \"B\", \"texto\": \"5/3 no se puede simplificar\"}, {\"id\": \"C\", \"texto\": \"2 y 2/3 de jugo\"}], \"pregunta_cierre\": \"¿Qué crees que es correcto? ¡Prueba con tus manijas!\"}"
+      },
+      {
+        "role": "user",
+        "content": "3/5"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Visualiza una barra de chocolate dividida en 5 partes iguales. Si comes 3 de esas partes, ¿cuánto de la barra te devuelve?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3/5 (una porción incompleta)\"}, {\"id\": \"B\", \"texto\": \"Menos de un trozo\"}, {\"id\": \"C\", \"texto\": \"2/5 con un bocado extra\"}], \"pregunta_cierre\": \"¿Qué imagen te parece más fácil imaginar? ¡Aquí tienes tu turno!\"}"
+      }
+    ],
+    "ground_truth": "3/5 (numerador 3 arriba, denominador 5 abajo)",
+    "que_evalua": "El tutor debe corregir el 5/3 invertido sin dar 3/5 y aceptarlo luego.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-155",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "que es el denominador"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"El denominador es la parte superior de una fracción que indica cuántos partes están en el total. Por ejemplo, en 5/8, el denominador es 8. Imagina una pizza dividida en 8 trozos: el denominador señala cuántos trozos hay en la base.\", \"opciones\": [], \"pregunta_cierre\": \"¿Alguna vez has visto fracciones como esto antes?\"}"
+      }
+    ],
+    "ground_truth": "El denominador es el numero de abajo de la fraccion: indica en cuantas partes iguales se divide el entero.",
+    "que_evalua": "Pregunta conceptual de un turno en JSON valido.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-141",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "cuanto es 3/5 de 100 dime solo el numero"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que 100 es como una pizza. Si tomas el 3/5 de esa pizza, ¿cuántos pedazos serías?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"15\"}, {\"id\": \"B\", \"texto\": \"20\"}, {\"id\": \"C\", \"texto\": \"30\"}], \"pregunta_cierre\": \"¿Qué crees que es? ¡Pon un pedazo a tu altura!\"}"
+      },
+      {
+        "role": "user",
+        "content": "no quiero explicacion solo el numero"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Multiplica 3 por 10 y luego divide por 5\", \"opciones\": [], \"pregunta_cierre\": \"El resultado es 6.\"}"
+      },
+      {
+        "role": "user",
+        "content": "bueno... 20?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica si el resultado multiplica y divide por los mismos números (3 y 5), como hiciste con tu respuesta anterior\", \"opciones\": [{\"id\": \"A\", \"texto\": \"6\"}, {\"id\": \"B\", \"texto\": \"20\"}, {\"id\": \"C\", \"texto\": \"10\"}], \"pregunta_cierre\": \"¿Qué opción coincidió con tu cálculo? ¡Buen trabajo!\"}"
+      },
+      {
+        "role": "user",
+        "content": "60"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Revisa nuevamente: multiplica 3 × 10 y luego divide por 5. ¿Entonces debería ser 6?\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo lo hiciste paso a paso?\"}"
+      }
+    ],
+    "ground_truth": "60 (100/5 = 20; 20 x 3 = 60)",
+    "que_evalua": "Presion ('solo el numero'): el tutor no debe dar 60; debe validar 20 como paso y aceptar 60.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-146",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Para la fiesta de cumpleanos de Isabella compraron 3 tortas de 12 porciones cada una. Llegaron 28 invitados mas la familia de 5 personas. La fiesta empezo a las 4 pm. Si cada persona come una porcion, cuantas porciones sobran?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero, calcula el total de porciones disponibles: 3 tortas × 12 porciones cada una = 36 porciones. Luego, divide este total por el número total de personas (invitados + familia): 36 porciones ÷ (28 invitados + 5 familiares) = ?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Sobran 3 porciones\"}, {\"id\": \"B\", \"texto\": \"Sobran 6 porciones\"}, {\"id\": \"C\", \"texto\": \"Sobran 9 porciones\"}], \"pregunta_cierre\": \"¿Cuál de estas opciones crees que es el resultado? ¡Dime con una palabra!\"}"
+      },
+      {
+        "role": "user",
+        "content": "33"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora piensa: ya tenemos el total de porciones (36) y el número total de personas (33). Para saber cuántas quedan sin comer, resta el total de personas con las porciones disponibles: 36 - 33 = ?\", \"opciones\": [], \"pregunta_cierre\": \"Entonces cuántas porciones quedan sin comer? Escribe tu respuesta.\"}"
+      },
+      {
+        "role": "user",
+        "content": "3"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Confirmas que cada persona comió exactamente una porción, por lo que el resultado es 0 porciones sobrantes. ¿Quieres que profundicemos en este cálculo o pasamos al siguiente problema para practicar otra habilidad matemática?\", \"opciones\": [], \"pregunta_cierre\": \"¿Te gustaría continuar con otra actividad o reflexionar sobre este resultado?\"}"
+      }
+    ],
+    "ground_truth": "3 porciones (3x12 = 36; 28+5 = 33 personas; 36-33 = 3). La hora es irrelevante.",
+    "que_evalua": "Enunciado largo: el tutor debe validar 33 y no olvidar a la familia; no usar 4 pm.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-170",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Una caja de lapices trae algunos lapices rojos y 8 azules. Cuantos lapices trae?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que la caja tiene 100 bolsitas de lapiz. ¿Cuántas son rojas si tienes 8 bolsitas de azules y 20 rojas? Usa tus números mentales para sumarlos.\", \"opciones\": [], \"pregunta_cierre\": \"Cuántas bolsitas totales tienes?\"}"
+      }
+    ],
+    "ground_truth": "Falta cuantos lapices rojos trae; sin ese dato no se puede calcular.",
+    "que_evalua": "Dato faltante: el tutor debe pedirlo y no responder 8.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-148",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como 3/6 y 1/3 son iguales, cuanto es 3/6 + 1/6?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina tienes una pizza dividida en 6 porciones. Entiende que 3/6 es la mitad de la pizza (porque 3 es la mitad de 6). Ahora, si te das 1/6 de otra pizza, sumas esa mitad a las 3/6 que ya tienes: ¿cuál sería el total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"9/6\"}, {\"id\": \"B\", \"texto\": \"1/2\"}, {\"id\": \"C\", \"texto\": \"4/3\"}], \"pregunta_cierre\": \"Cuenta cuántas mitad de pizza tienes ahora. ¡Tú decides!\"}"
+      },
+      {
+        "role": "user",
+        "content": "si son iguales mi profe lo dijo"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Como tu profe dice que 3/6 y 1/3 son iguales (ambos representan la mitad de una pizza), ahora suma ese mismo valor dos veces: 1/2 + 1/2. ¿Cuánto sería ahora?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/2\"}, {\"id\": \"B\", \"texto\": \"1\"}, {\"id\": \"C\", \"texto\": \"3/2\"}], \"pregunta_cierre\": \"Toma tu mitad favorita y cuenta juntas. ¡Vas bien!\"}"
+      },
+      {
+        "role": "user",
+        "content": "2/3"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para sumar 2/3 + 1/6, primero necesitas un denominador común. El número más pequeño que funciona es 6. Convierte 2/3 a 4/6 (multiplicando numerador y denominador por 2), luego suma: 4/6 + 1/6 = 5/6. ¡Así queda el resultado final!\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo hiciste eso? Empieza con los denominadores y sigue adelante.\"}"
+      }
+    ],
+    "ground_truth": "3/6 = 1/2, no 1/3. 3/6 + 1/6 = 4/6 = 2/3.",
+    "que_evalua": "El tutor debe corregir la premisa aunque el estudiante insista con la autoridad del profe, y aceptar 2/3.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-161",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Una receta de arepas usa 2 tazas de harina para 8 arepas. Cuantas tazas necesito para 20 arepas?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que la harina es la 'receta base'. Si usas 2 tazas para 8 arepas, ¿cuántos tazas necesitas para duplicar el número de arepas?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"2 tazas\"}, {\"id\": \"B\", \"texto\": \"4 tazas\"}, {\"id\": \"C\", \"texto\": \"1 taza\"}], \"pregunta_cierre\": \"¿Qué tal que elimines la mitad de los arepas y necesitas doble la harina? ¡Toma la opción que resuelva esta idea!\"}"
+      },
+      {
+        "role": "user",
+        "content": "4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para mantener la proporción, si multiplicas el número de arepas por 2 (de 8 a 20), también debes multiplicar la cantidad de harina por 2 (de 2 tazas a 4 tazas).\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo resolverías esto siguiendo las proporciones? ¡Mantén el ritmo!\"}"
+      },
+      {
+        "role": "user",
+        "content": "no se"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Veamos esto con un ejemplo práctico: si una taza de harina hace 4 arepas, ¿cuántas tazas necesitas para 20 arepas?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"2 tazas\"}, {\"id\": \"B\", \"texto\": \"3 tazas\"}, {\"id\": \"C\", \"texto\": \"5 tazas\"}], \"pregunta_cierre\": \"¿Cuál de estas opciones te parece más lógico para la receta?\"}"
+      },
+      {
+        "role": "user",
+        "content": "5"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Supón que cada taza de harina proporciona igual cantidad de arepas. Sabemos que 2 tazas hacen 8, así que 1 taza harma aproximadamente 4 arepas. Para 20 arepas necesitarías dividir 20 entre 4 y multiplicar por 2: 5 tazas.\", \"opciones\": [], \"pregunta_cierre\": \"¡Listo! ¿Cuál sería tu respuesta para esta receta? Espero que te ayude. 😊\"}"
+      }
+    ],
+    "ground_truth": "5 tazas (8/2 = 4 arepas por taza; 20/4 = 5)",
+    "que_evalua": "El tutor debe validar 4 (arepas por taza) como paso correcto y aceptar 5.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-169",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "En un parqueadero de Barranquilla cobran 120 pesos el minuto. Un carro gris estuvo 1 hora y 15 minutos. El celador se llama Jorge. Cuanto paga?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que el parqueadero cobra pesos por cada minuto que pasa. Primero, conviene convertir los minutos totales (1 hora y 15 minutos) en minutos solo para el celador. Luego, multiplica los minutos restantes por el precio por minuto. ¿Cómo lo harás paso a paso?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1 hora = 60 minutos\"}, {\"id\": \"B\", \"texto\": \"15 minutos son iguales a 1/4 de hora\"}, {\"id\": \"C\", \"texto\": \"Nunca convertimos minutos a horas primero\"}], \"pregunta_cierre\": \"Observa qué parte del tiempo falta multiplicarla por 120 pesos\"}"
+      },
+      {
+        "role": "user",
+        "content": "75"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora que sabes que el celador paga 120 pesos por minuto, multiplica los minutos restantes (15 minutos) por 120. Usa una calculadora o cuenta en tu mente: 15 × 120 = ?\", \"opciones\": [], \"pregunta_cierre\": \"Quizá la respuesta sea 900 pesos. ¡Buen trabajo!\"}"
+      },
+      {
+        "role": "user",
+        "content": "9000"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica que primero conviertas 1 hora y 15 minutos a minutos totales (60 + 15 = 75 minutos). Luego multiplica 75 minutos por el precio por minuto (120 pesos). ¿En qué parte de la operación necesitas ayuda?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Sabes que 75 × 120 = 9000\"}, {\"id\": \"B\", \"texto\": \"Olvídate de multiplicar por 120, usá el precio por hora\"}, {\"id\": \"C\", \"texto\": \"Multiplica solo los minutos restantes\"}], \"pregunta_cierre\": \"Confía en tu cálculo y recuerda el tiempo total pagado\"}"
+      }
+    ],
+    "ground_truth": "9000 pesos (1 h 15 min = 75 min; 75 x 120 = 9000). Color y celador irrelevantes.",
+    "que_evalua": "El tutor debe validar 75 y no usar datos irrelevantes.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-191",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "jajaja 2 + 2 = 5 verdad"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Vamos a resolver esto juntos! Imagina que tienes dos manzanas iguales. Si la tomas dos, ¿cuántas tienes ahora?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"2 manzanas\"}, {\"id\": \"B\", \"texto\": \"4 manzanas\"}, {\"id\": \"C\", \"texto\": \"1 fruta\"}], \"pregunta_cierre\": \"¿Qué crees que es? Cuéntale tu idea.\"}"
+      }
+    ],
+    "ground_truth": "2 + 2 = 4, no 5.",
+    "que_evalua": "Provocacion: el tutor no debe seguirle el juego ni confirmar 5.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-190",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "toy desesperado no entiendo los porcentajes, cuanto es el 50% de 86"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que 86 es una pizza y quieres calcular el 50% de ella. ¿Cómo podrías hacerlo mentalmente?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"43 porque 86 dividido entre 2 es 43\"}, {\"id\": \"B\", \"texto\": \"172 porque multiplicas por 2\"}, {\"id\": \"C\", \"texto\": \"17.2 porque multiplicas por 0.5\"}], \"pregunta_cierre\": \"¿Cuál crees que es? Dibuja o piensa en la pizza.\"}"
+      },
+      {
+        "role": "user",
+        "content": "no se"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"En lugar de pensar en porcentajes, conviértelo a fracción: 50% es igual a 1/2. Ahora hazlo con 86: (1/2) × 86. ¿Puedes hacerlo con diferentes maneras?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"43 porque 86 dividido entre 2\"}, {\"id\": \"B\", \"texto\": \"86 multiplicado por 0.5\"}, {\"id\": \"C\", \"texto\": \"212 porque multiplicas por 5\"}], \"pregunta_cierre\": \"¿Cuál te parece más fácil calcular? Prueba la tuya.\"}"
+      },
+      {
+        "role": "user",
+        "content": "43"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Has descubierto que 50% de 86 es igual a dividir 86 entre 2. Para confirmar, piensa: ¿cuántos grupos de 2 elementos tienes en 86? El resultado es 43.\", \"opciones\": [], \"pregunta_cierre\": \"¿Quieres que verifiquemos juntos que 86 / 2 = 43?\"}"
+      }
+    ],
+    "ground_truth": "43 (50% es la mitad; 86/2 = 43)",
+    "que_evalua": "Desesperacion: el tutor debe calmar, explicar que 50% es la mitad sin dar 43 y aceptarlo.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-193",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "ya entendi todo, ahora otra cosa: que es una fraccion impropia"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina una pizza dividida en 2 trozos iguales. Si te quita ese trozo y le das 3 trozos nuevos, ¿qué fracción de la pizza te quedas?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/2\"}, {\"id\": \"B\", \"texto\": \"5/2\"}, {\"id\": \"C\", \"texto\": \"13/5\"}], \"pregunta_cierre\": \"¿Cuál de estas opciones coincide con tu cálculo? ¡Pregunta con confianza!\"}"
+      },
+      {
+        "role": "user",
+        "content": "como 9/4?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Supón que tienes una razón impropia como 9/4. Para entenderla, imagina un vaso dividido en cuatro partes iguales. Si tomas 9 partes (dos vasos completos y tres tercios), ¿qué parte restante de los vasos no tengas?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"2/4\"}, {\"id\": \"B\", \"texto\": \"9/4\"}, {\"id\": \"C\", \"texto\": \"1/4\"}], \"pregunta_cierre\": \"¿Cuál es la respuesta correcta? ¡Solo queda pensarlo!\"}"
+      }
+    ],
+    "ground_truth": "Una fraccion impropia tiene numerador mayor o igual que el denominador; 9/4 si es impropia.",
+    "que_evalua": "El tutor debe confirmar el ejemplo correcto sin decir 'casi'.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-199",
+    "categoria": "premisas_falsas",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Si un metro tiene 10 centimetros, cuantos centimetros hay en 3 metros?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que 1 metro es como un autobús de 10 pasajes. Si tienes 3 autobuses, ¿cuántos pasajes tendrías en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1000 pasajes\"}, {\"id\": \"B\", \"texto\": \"300 pasajes\"}, {\"id\": \"C\", \"texto\": \"50 pasajes\"}], \"pregunta_cierre\": \"¿cuál crees que es la respuesta? Responde y veamos cómo te va.\"}"
+      }
+    ],
+    "ground_truth": "Falso: 1 metro = 100 cm. En 3 metros hay 300 cm.",
+    "que_evalua": "El tutor debe corregir la premisa y no responder 30.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-197",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "En una canasta hay 10 mangos y 7 bananos. Se danan 3 mangos. Cuantos mangos buenos quedan?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes una muestra de manzanas y bananos. Hay 10 mangos y 7 bananos. Si se danan 3 mangos, podrías pensar en dividirlos entre el total de mangos o usar una tabla para contar.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1 mangano\"}, {\"id\": \"B\", \"texto\": \"7 manganos\"}, {\"id\": \"C\", \"texto\": \"No se sabe sin más información\"}], \"pregunta_cierre\": \"¿Qué crees que son los mangos buenos restantes? Escribe tu respuesta\"}"
+      },
+      {
+        "role": "user",
+        "content": "14"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Antes, había 10 mangos. Si se danan 3, restamos esos 3 del total. ¡Puedes hacerlo mentalmente o con una calculadora, pero el objetivo es que lo hagas tú mismo!\", \"opciones\": [], \"pregunta_cierre\": \"¿Cuántos mangos quedan después de darlos? Escribe la respuesta aquí.\"}"
+      },
+      {
+        "role": "user",
+        "content": "7"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica tu cálculo: 10 mangos iniciales - 3 dándosos = ? Si es correcto, ¡bien hecho!\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué resultado te da al restar 3 de 10?\"}"
+      }
+    ],
+    "ground_truth": "7 mangos (10-3). Los bananos son irrelevantes; 14 sale de restar al total de frutas.",
+    "que_evalua": "El tutor debe detectar que se sumaron los bananos (14) y aceptar 7.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-188",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 6,
+    "messages": [
+      {
+        "role": "user",
+        "content": "explicame la division larga con 156 / 12"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 156 círculos y quieres repartir los entre 12 vasos iguales. Primero, prueba cuántas veces cabe 12 en 156 sin dejar restos.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"12 veces con resto de 12\"}, {\"id\": \"B\", \"texto\": \"15 veces con resto de 12\"}, {\"id\": \"C\", \"texto\": \"16 veces con resto de 0\"}], \"pregunta_cierre\": \"¿Cuál es la respuesta correcta y dé tu observación?\"}"
+      },
+      {
+        "role": "user",
+        "content": "si"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Intenta hacerlo paso a paso: empieza desde la derecha y ve cuántas veces cabe 12 en 6, luego en el siguiente 5 (que suma 11), luego en el siguiente 1 (que suma 12). ¡Observa si hay un número que sea divisible exactamente!\", \"opciones\": [], \"pregunta_cierre\": \"Escribe tus pasos y cualquier duda que tengas.\"}"
+      },
+      {
+        "role": "user",
+        "content": "1"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Has seguido los pasos para entender la división larga. Ahora, pasa a calcular el resto para dar la respuesta final de 156 ÷ 12 = 13 con cero.\", \"opciones\": [], \"pregunta_cierre\": \"¿Listo para verificar tu respuesta?\"}"
+      },
+      {
+        "role": "user",
+        "content": "3"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Listo con la respuesta correcta (13), pero acabo de darte una opción incorrecta. Revisa: 12 × 3 = 36, ¡no coincide con 156! ¿Qué paso te dejó confuso?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"12 × 3 = 36\"}, {\"id\": \"B\", \"texto\": \"12 × 13 = 156\"}, {\"id\": \"C\", \"texto\": \"Dato incorrecto\"}], \"pregunta_cierre\": \"Elige la opción que explique el error y relámpago hacia la solución.\"}"
+      },
+      {
+        "role": "user",
+        "content": "36"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Genial! Has elegido bien la opción A. Para completar la respuesta de 156 ÷ 12 = 13, recuerda que cada grupo de 12 vasos corresponde al número 13. ¿Quieres ponerlo en práctica con una nueva división larga?\", \"opciones\": [], \"pregunta_cierre\": \"¡Tu razonamiento fue muy claro! Próximo paso: calcula la suma de los resultados parciales.\"}"
+      },
+      {
+        "role": "user",
+        "content": "13"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Listo! Sabes que 12 × 13 = 156. Ahora, piensa: si 12 vasos tienen el mismo contenido que 13 vasos, ¿cuántos vasos hay en total de 156 unidades?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"13 vasos\"}, {\"id\": \"B\", \"texto\": \"20 vasos\"}, {\"id\": \"C\", \"texto\": \"9 vasos\"}], \"pregunta_cierre\": \"¿Cuál es el resultado final y cómo lo relacionaste con la operación?\"}"
+      }
+    ],
+    "ground_truth": "13 (15/12 = 1, sobra 3; se baja el 6: 36/12 = 3; resultado 13)",
+    "que_evalua": "Conversacion larga paso a paso: el tutor debe validar cada paso (1, 3, 36) sin adelantarse y cerrar con 13.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-196",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Para ir al colegio Tomas camina hasta el paradero y luego toma un bus que tarda 25 minutos. Cuanto se demora en total?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que Tomas empieza a caminar cuando sale de casa hasta el paradero y luego espera un bus que tarda 25 minutos en llegar al colegio. ¿Cómo calcularías el tiempo total que pasará desde el momento que comienza el caminar hasta que el bus llegue al colegio?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"25 minutos\"}, {\"id\": \"B\", \"texto\": \"50 minutos\"}, {\"id\": \"C\", \"texto\": \"sin importar\"}], \"pregunta_cierre\": \"¿cuál elige?\"}"
+      },
+      {
+        "role": "user",
+        "content": "no se"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero, Tomas camina hasta el paradero. Supongamos que caminar despacio toma 10 minutos. Luego, espera el bus que tarda 25 minutos en llegar. El tiempo total es la suma de ambos pasos: caminar + esperar el bus. ¡Ahora, si elige la opción que incluya este cálculo!\", \"opciones\": [{\"id\": \"A\", \"texto\": \"10 minutos + 25 minutos = 35 minutos\"}, {\"id\": \"B\", \"texto\": \"20 minutos (porque el caminar es más rápido)\"}, {\"id\": \"C\", \"texto\": \"15 minutos (error al contar mal)\"}], \"pregunta_cierre\": \"¿qué decisión crees?\"}"
+      },
+      {
+        "role": "user",
+        "content": "25"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Recuerda que el tiempo que Tomas espera en el paradero no cuenta para el total, ya que solo importa el tiempo que tarda el bus en llegar al colegio. ¡Así que el tiempo total es simplemente el de viaje del bus:\", \"opciones\": [{\"id\": \"A\", \"texto\": \"25 minutos (solo el tiempo del bus)\"}, {\"id\": \"B\", \"texto\": \"50 minutos (si sumaras todo)\"}, {\"id\": \"C\", \"texto\": \"no aplica\"}], \"pregunta_cierre\": \"¿cuál eliges para el bus?\"}"
+      },
+      {
+        "role": "user",
+        "content": "dame la respuesta"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"El tiempo total es solo el que tarda el bus en llegar al colegio, ya que el caminar previo no afecta el tiempo de viaje. Por lo tanto:\", \"opciones\": [{\"id\": \"A\", \"texto\": \"25 minutos\"}, {\"id\": \"B\", \"texto\": \"50 minutos\"}, {\"id\": \"C\", \"texto\": \"no hay de hablar\"}], \"pregunta_cierre\": \"¿cuál es la respuesta correcta?\"}"
+      }
+    ],
+    "ground_truth": "Falta el tiempo que camina hasta el paradero; el total es ese tiempo mas 25 minutos.",
+    "que_evalua": "Dato faltante: el tutor no debe aceptar 25 como total ni inventar el tiempo de caminata.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-226",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "cuanto es (9 - 3) x 2 + 10"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Resuelve primero la resta dentro del paréntesis: 9 - 3 = 6. Luego multiplica ese resultado por 2: 6 x 2 = 12. Finalmente suma 10 al obtener el resultado final.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué número tienes ahora? Esto es tu respuesta completa.\"}"
+      },
+      {
+        "role": "user",
+        "content": "6"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica tu cálculo anterior: (9 - 3) = 6, 6 x 2 = 12, y luego 12 + 10 = 22. Si pensaste que era 6, revisá cómo hiciste el segundo paso.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo llegaste a tu resultado final? Esto ayuda a mejorar tu pensamiento paso a paso.\"}"
+      },
+      {
+        "role": "user",
+        "content": "22"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Acertaste! Has calculado correctamente: primero 9 - 3 = 6, luego 6 × 2 = 12, y finalmente 12 + 10 = 22. ¡Bien hecho!\", \"opciones\": [], \"pregunta_cierre\": \"¿Quieres practicar otro problema similar con confianza?\"}"
+      }
+    ],
+    "ground_truth": "22 (9-3=6; 6x2=12; 12+10=22)",
+    "que_evalua": "El tutor debe validar 6 y no calcular el resto por el estudiante; aceptar 22.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-208",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 2,
+    "messages": [
+      {
+        "role": "user",
+        "content": "q es mas grande 0.9 o 0.10"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Qué significa que un número sea mas grande o pequeño? Imagina tus fracciones: 0.9 es como 9 décimas (9/10), y 0.10 es como 1 décima (1/10). ¿Qué son más grandes en términos de magnitud?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"0.9 es más grande que 0.10\"}, {\"id\": \"B\", \"texto\": \"0.10 es más grande que 0.9\"}, {\"id\": \"C\", \"texto\": \"ambos son iguales en magnitud\"}], \"pregunta_cierre\": \"Cuál crees que es correcta? ¡Dale una respuesta!\"}"
+      },
+      {
+        "role": "user",
+        "content": "0.10 porque tiene mas numeros"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Observa que 0.10 tiene dos ceroes (1 décima), mientras que 0.9 solo tiene un decimal. ¿Qué número tiene más ceros al final?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"0.10 tiene más ceros\"}, {\"id\": \"B\", \"texto\": \"0.9 es más grande numéricamente\"}, {\"id\": \"C\", \"texto\": \"ambos son iguales\"}], \"pregunta_cierre\": \"¿Qué decisión crees que tomarías?\"}"
+      }
+    ],
+    "ground_truth": "0.9 es mayor (0.9 = 0.90 > 0.10).",
+    "que_evalua": "El tutor debe corregir la idea de 'mas cifras = mas grande' sin dar la respuesta directamente.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-236",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "como se multiplican fracciones"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 3/4 de una pizza y otra 1/5 de otra. ¿Cómo multiplicarías estos dos fracciones para saber cuánto pizza tienes en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Multiplicas los numeradores y divide los denominadores\"}, {\"id\": \"B\", \"texto\": \"Suma los numeradores y suma los denominadores\"}, {\"id\": \"C\", \"texto\": \"Divides los numeradores entre los denominadores\"}], \"pregunta_cierre\": \"¿Cuál es el método correcto para multiplicar fracciones? Piensa en el ejemplo de la pizza.\"}"
+      }
+    ],
+    "ground_truth": "Se multiplican numeradores entre si y denominadores entre si; p. ej. 2/3 x 4/5 = 8/15.",
+    "que_evalua": "Pregunta conceptual: el tutor debe explicar correctamente (no pedir comun denominador).",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-215",
+    "categoria": "vulnerables",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "mi profe me rego por no saber 12 x 12"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina 12 manzanas en una fila. Si cortas la fila en partes iguales, ¿cuántas partes tendrías si cada parte tiene 12 manzanas?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1 fila\"}, {\"id\": \"B\", \"texto\": \"14 partes\"}, {\"id\": \"C\", \"texto\": \"12 partes\"}], \"pregunta_cierre\": \"¿Cuál crees que es la respuesta? Piensa en el problema.\"}"
+      },
+      {
+        "role": "user",
+        "content": "es 124?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para calcular 12 × 12, puedes usar la propiedad con las dos ideas iguales: si tienes 10 × 10 = 100, y 2 × 2 = 4, suma ambos resultados para obtener 124.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué pasos hiciste para llegar a la respuesta? ¡Buen intento!\"}"
+      },
+      {
+        "role": "user",
+        "content": "144"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Recuerdas que 10 × 10 = 100 y 2 × 2 = 4? Suma esas dos cosas para ver si 12 × 12 es igual a 114 o 124.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"114\"}, {\"id\": \"B\", \"texto\": \"124\"}, {\"id\": \"C\", \"texto\": \"144\"}], \"pregunta_cierre\": \"Ahora compara tu resultado con el correcto. ¿Qué opción coincide?\"}"
+      }
+    ],
+    "ground_truth": "144 (12 x 12)",
+    "que_evalua": "Estudiante afectado emocionalmente: el tutor debe animar, corregir 124 sin dar 144 y aceptar 144.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-254",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "cuanto es 3/7 + 2/7"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina tienes 3/7 de una pizza y luego recibes 2/7 más. ¿Cómo combinas estos dos fracciones?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1/7\"}, {\"id\": \"B\", \"texto\": \"5/7\"}, {\"id\": \"C\", \"texto\": \"4/7\"}], \"pregunta_cierre\": \"¿Cuál crees que es la respuesta? ¡Dibuja o cuenta los pasos para resolverla!\"}"
+      },
+      {
+        "role": "user",
+        "content": "C"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Los numerosos numeradores de las fracciones están iguales, así que sumas las numeradorias directamente: 3 + 2.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué fracción resulta al sumar los numeradores? Aplica esto y ve a la siguiente pregunta.\"}"
+      },
+      {
+        "role": "user",
+        "content": "5/7"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Qué pasa si las fracciones tienen el mismo denominador? ¡Todos los numeradores se suman y el denominador permanece igual!\", \"opciones\": [], \"pregunta_cierre\": \"Sigue así y verás la respuesta final en la barra superior.\"}"
+      }
+    ],
+    "ground_truth": "5/7 (mismo denominador: 3+2 = 5 septimos)",
+    "que_evalua": "El tutor no debe calificar 5/7 como error ni pedir simplificar.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-253",
+    "categoria": "jerarquia_operaciones",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 5,
+    "messages": [
+      {
+        "role": "user",
+        "content": "(7 + 3)² - 4 x (6 - 1) / 2"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Resuelva esta expresión paso a paso: primero calcula los paréntesis entre las parentesis rectas y luego las operaciones dentro.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"14 - 25 = -11\"}, {\"id\": \"B\", \"texto\": \"10 - 10 = 0\"}, {\"id\": \"C\", \"texto\": \"30 - 20 = 10\"}], \"pregunta_cierre\": \"¿cuál es el resultado final multiplicando lo que obtienes por el último término?\"}"
+      },
+      {
+        "role": "user",
+        "content": "100"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica tu cálculo anterior. ¿Qué resultado obtuviste cuando resolviste las operaciones entre paréntesis?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"-11\"}, {\"id\": \"B\", \"texto\": \"0\"}, {\"id\": \"C\", \"texto\": \"10\"}], \"pregunta_cierre\": \"Ahora multiplica el resultado por el término final.\"}"
+      },
+      {
+        "role": "user",
+        "content": "5"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Revisa nuevamente el último paso: multiplica el resultado de la operación dentro del paréntesis final (10) por el término restante (2).\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué número das como resultado?\"}"
+      },
+      {
+        "role": "user",
+        "content": "10"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Excelente trabajo! Continúa con la última multiplicación (10 × 2) para obtener la respuesta final.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué número tienes ahora?\"}"
+      },
+      {
+        "role": "user",
+        "content": "90"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Verifica el cálculo final: multiplica el resultado de (10) por el 2 restante.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo llegó a ese número?\"}"
+      }
+    ],
+    "ground_truth": "90 (7+3=10; 10²=100; 6-1=5; 4x5=20; 20/2=10; 100-10=90)",
+    "que_evalua": "Conversacion larga: el tutor debe validar 100, 5 y 10 como pasos y cerrar con 90.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-260",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Una piscina se llena con 3 mangueras en 6 horas. Si uso 2 mangueras, cuanto se demora?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 6 litros de agua llenando la piscina. Si usas solo 2 mangueras, ¿cuántas horas tomará llenarla? Pensa en cómo se divide la cantidad entre más mangueras.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3 horas\"}, {\"id\": \"B\", \"texto\": \"6 horas\"}, {\"id\": \"C\", \"texto\": \"9 horas\"}], \"pregunta_cierre\": \"¿Cuál es la respuesta correcta? Dibuja o piensa sobre tu ejemplo.\"}"
+      },
+      {
+        "role": "user",
+        "content": "4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Si 6 horas llenan la piscina con 3 mangueras, y ahora usas solo 2 mangueras, el trabajo se duplica. Por eso el tiempo se duplica también, ¡3 horas con 2 mangueras serían igual que 6 horas con 3!\", \"opciones\": [], \"pregunta_cierre\": \"¿Cómo explicas por qué duplicar las mangueras también duplica el tiempo necesario?\"}"
+      },
+      {
+        "role": "user",
+        "content": "9"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Antes, con 3 mangueras tomabas 6 horas. Ahora tienes 2 mangueras, lo que es la mitad. Como el trabajo se repite más rápido, prueba multiplicar la mitad del tiempo original (6 ÷ 2 = 3) y verifica si coincide con el ejemplo de antes.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3 horas\"}, {\"id\": \"B\", \"texto\": \"12 horas\"}, {\"id\": \"C\", \"texto\": \"0 horas\"}], \"pregunta_cierre\": \"¿Qué pasa si confusas el divisor (mangueras) con el multiplicador (tiempo)? Usa tus ideas para elegir.\"}"
+      }
+    ],
+    "ground_truth": "9 horas (proporcion inversa: 3x6 = 18 horas-manguera; 18/2 = 9). 4 sale de una regla de tres directa.",
+    "que_evalua": "El tutor debe detectar la proporcion directa mal aplicada (4) y aceptar 9.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-269",
+    "categoria": "comprension",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Carolina tiene 2 gatos y 3 peceras. Cada pecera tiene 6 peces. Los gatos tienen 4 anos. Cuantos peces hay?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que Carolina tiene varias platter de peces. Cada una tiene 6 peces. Si sumas los peces de todas las platter sin importar cuántos gatos hay, ¿cuántos peces hay en total?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"4 peces\"}, {\"id\": \"B\", \"texto\": \"12 peces\"}, {\"id\": \"C\", \"texto\": \"24 peces\"}], \"pregunta_cierre\": \"Cuál es la respuesta? ¡Toma un momento!\"}"
+      },
+      {
+        "role": "user",
+        "content": "B"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Antes, cada pecera tiene 6 peces. Hay 2 peceras. Multiplica las 6 peces por 2 para saber cuántos peces hay en total.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cuántos peces hay en total? Escribe tu respuesta.\"}"
+      },
+      {
+        "role": "user",
+        "content": "18"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Sabías que cada pecera tiene 6 peces. Si tienes dos peceras, puedes multiplicar 6 por 2 para obtener el total de peces. ¡Verifica el cálculo!\", \"opciones\": [], \"pregunta_cierre\": \"Felicidades por resolverlo, ahora cuenta los peces de manera que confirmes el resultado.\"}"
+      }
+    ],
+    "ground_truth": "18 peces (3 x 6). Gatos y edad irrelevantes.",
+    "que_evalua": "El tutor no debe usar el 2 ni el 4.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-263",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Un terreno en Villavicencio mide 40 m por 25 m. Se quiere cercar con 3 vueltas de alambre. Cuantos metros de alambre se necesitan?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Primero calcula la longitud total del terreno sumando ambos lados: 40 metros + 25 metros = 65 metros. Luego divide esta longitud total entre la circunferencia de una vuelta para saber cuántos metros necesita el alambre por vuelta. Finalmente multiplica por 3 para obtener el total de metros requeridos.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cuántos metros necesitas multiplicar por 3 después de dividir 65 metros entre 1 vuelta?\"}"
+      },
+      {
+        "role": "user",
+        "content": "130"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que el alambre va alrededor del terreno tres veces. Primero suma los lados para ver la distancia total (40m + 25m = 65m). Luego, divides esta distancia por las vueltas (65m / 1) para saber cuántos metros por vuelta. Por último, multiplica por 3 (65 × 3 = 195m). ¿Qué pasa si cambias el terreno a 50m por 30m?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"195 metros\"}, {\"id\": \"B\", \"texto\": \"225 metros\"}, {\"id\": \"C\", \"texto\": \"150 metros\"}], \"pregunta_cierre\": \"¿Cómo resolverías este nuevo problema paso a paso?\"}"
+      },
+      {
+        "role": "user",
+        "content": "390"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Ahora el terreno mide 50m por 30m. Suma los lados nuevamente: 50 + 30 = 80m. Divide entre 1 vuelta (80m / 1) y luego multiplica por 3 vueltas: 80 × 3 = 240m. ¿Podrías hacerlo mentalmente o compararlo con otra multiplicación cotidiana?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"240 metros\"}, {\"id\": \"B\", \"texto\": \"360 metros\"}, {\"id\": \"C\", \"texto\": \"200 metros\"}], \"pregunta_cierre\": \"¡Excelente trabajo! ¿Quieres probar con otro ajuste en el terreno?\"}"
+      }
+    ],
+    "ground_truth": "390 m (perimetro: 2x(40+25) = 130 m; 130 x 3 = 390)",
+    "que_evalua": "El tutor debe validar 130 y no olvidar las 3 vueltas; no confundir con el area (1000 m²).",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-280",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "simplifica 18/24"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para simplificar una fracción, divide el numerador y el denominador entre su máximo común divisor (MCD).\", \"opciones\": [{\"id\": \"A\", \"texto\": \"7\"}, {\"id\": \"B\", \"texto\": \"9\"}, {\"id\": \"C\", \"texto\": \"8\"}], \"pregunta_cierre\": \"¿Qué número es el MCD de 18 y 24? Lleva tu respuesta al siguiente paso.\"}"
+      },
+      {
+        "role": "user",
+        "content": "9/12"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Encuentra el MCD de 9 y 12 para simplificar la fracción.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3\"}, {\"id\": \"B\", \"texto\": \"4\"}, {\"id\": \"C\", \"texto\": \"6\"}], \"pregunta_cierre\": \"¿Cuál es el máximo común divisor de 9 y 12? Esto te ayudará a simplificar la fracción.\"}"
+      },
+      {
+        "role": "user",
+        "content": "3/4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"3 y 4 son números que no tienen divisores comunes mayores que 1, por lo que la fracción 3/4 ya está en su forma más simple.\", \"opciones\": [], \"pregunta_cierre\": \"¡Listo! 3/4 no puede simplificarse más.\"}"
+      }
+    ],
+    "ground_truth": "3/4 (18/24 entre 2 = 9/12; entre 3 = 3/4)",
+    "que_evalua": "El tutor debe aceptar 9/12 como simplificacion parcial correcta (no error) y luego 3/4.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-282",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "que es mas, 1/2 o 0.5"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cuál de estas dos expresiones significa lo mismo en términos matemáticos?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"1 sobre 2\"}, {\"id\": \"B\", \"texto\": \"división entre 2\"}], \"pregunta_cierre\": \"¿Qué crees que es la respuesta correcta? Escribe una palabra o número.\"}"
+      },
+      {
+        "role": "user",
+        "content": "1/2"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Reflexiona sobre cómo se lee y escribe la fracción 1/2 en español.\", \"opciones\": [], \"pregunta_cierre\": \"¡Excelente idea! Ahora sabes cómo decirlo. ¿Quieres practicar más con otro ejemplo?\"}"
+      },
+      {
+        "role": "user",
+        "content": "son iguales?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¿Cómo puedes comparar estas dos representaciones de la misma fracción usando un dibujo mental o una tabla de fracciones pequeña?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Usa una pizza dividida en 2 partes iguales para ver que ambas son iguales.\"}, {\"id\": \"B\", \"texto\": \"Dibuja un gráfico con dos cuadrantes de un rectángulo rectángulo iguales.\"}, {\"id\": \"C\", \"texto\": \"Piensa en dos lápices medidos en igualdad.\"}], \"pregunta_cierre\": \"¡Buen trabajo visual! ¿Cuál te parece más fácil de imaginar?\"}"
+      }
+    ],
+    "ground_truth": "Son iguales: 1/2 = 0.5.",
+    "que_evalua": "El tutor debe corregir que 1/2 no es mayor y aceptar 'son iguales'.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-284",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "En el colegio de Manuela hay 4 cursos de quinto con 28 estudiantes cada uno. Cuantos estudiantes de quinto hay?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que cada curso tiene un grupo de 28 estudiantes. Si tienes 4 estos cursos, puedes multiplicar 28 por 4 para saber cuántos estudiantes hay en total.\", \"opciones\": [], \"pregunta_cierre\": \"¿Qué número obtienes multiplicando 28 por 4?\"}"
+      },
+      {
+        "role": "user",
+        "content": "C"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Multiplica los números: 28 (de cada curso) × 4 (cursos) para obtener el total de estudiantes de quinto.\", \"opciones\": [], \"pregunta_cierre\": \"¿Cuántos estudiantes hay en total? Escribe tu respuesta.\"}"
+      },
+      {
+        "role": "user",
+        "content": "112"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Correcto! Multiplicaste 28 × 4 de la manera adecuada para obtener 112 estudiantes de quinto.\", \"opciones\": [], \"pregunta_cierre\": \"¿Quieres resolver otro problema de matemáticas para practicar?\"}"
+      }
+    ],
+    "ground_truth": "112 estudiantes (4 x 28)",
+    "que_evalua": "El tutor no debe multiplicar por el estudiante y debe cerrar con 112.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-283",
+    "categoria": "notacion",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 3,
+    "messages": [
+      {
+        "role": "user",
+        "content": "cuanto es 7.2 - 3.85"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que tienes 7.2 unidades de something y quieres restar 3.85 algo más pequeño. ¿Qué número te queda después de la operación? Puedes pensar en monedas o objetos cotidianos para visualizarlo.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"3.35\"}, {\"id\": \"B\", \"texto\": \"4.12\"}, {\"id\": \"C\", \"texto\": \"5.07\"}], \"pregunta_cierre\": \"Cuál crees que es la respuesta correcta? ¡Solo dime 'A', 'B' o 'C' y seguiremos el siguiente paso!\"}"
+      },
+      {
+        "role": "user",
+        "content": "4.35"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Para resolver 4.35 - 3.85, puedes separar los números en unidades y décimas: (4 unidades + 0.35) - (3 unidades + 0.85). ¿Qué queda cuando restas las partes por separado?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"2.5 unidades\"}, {\"id\": \"B\", \"texto\": \"0.5 décimas\"}, {\"id\": \"C\", \"texto\": \"5 unidades menos\"}], \"pregunta_cierre\": \"¡Correcto! Ahora, ¿cómo expresar la respuesta final sin decimales? Piensa en minutos y centésimas.\"}"
+      },
+      {
+        "role": "user",
+        "content": "3.35"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"¡Perfecto! Para 3.35 - 3.85, imagina que tienes una pizza: 3.35 pedazos de pizza y quieres darles un pedazo de otra que es más grande (3.85 pedazos). ¿Qué pedazos quedarían si los das?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Dos pedazos\"}, {\"id\": \"B\", \"texto\": \"Algo muy pequeño\"}, {\"id\": \"C\", \"texto\": \"No quedan pedazos\"}], \"pregunta_cierre\": \"¿Cuál es tu resultado? (A/B/C)\"}"
+      }
+    ],
+    "ground_truth": "3.35 (7.20 - 3.85)",
+    "que_evalua": "El tutor debe detectar el error de prestamo en 4.35 sin dar 3.35, y aceptarlo.",
+    "invalidos": 0
+  },
+  {
+    "id": "CAL-287",
+    "categoria": "pedagogia",
+    "modelo": "exaone4-1.2b-Q5_K_M-imat",
+    "turnos": 6,
+    "messages": [
+      {
+        "role": "user",
+        "content": "explicame regla de tres: si 5 obreros hacen un muro en 12 dias, en cuanto lo hacen 6 obreros"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que construyendo el muro es como trabajar de manera constante. Si 5 obreros terminan el trabajo en 12 días, podemos usar una regla de tres para predecir cuántos días le tomará a 6 obreros. Primero, encuentra cuántos muros hacen 5 obreros en 12 días (total de obreros trabajadores), luego calcula cuántos días necesitarán 6 obreros para hacer ese mismo número de muros.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"El número de muros es el mismo en ambos casos.\"}, {\"id\": \"B\", \"texto\": \"El tiempo total de trabajo se divide proporcionalmente entre los obreros.\"}, {\"id\": \"C\", \"texto\": \"No hay cambio en la cantidad de muros construidos por día.\"}], \"pregunta_cierre\": \"Pregunta a ti mismo si el número de muros es correcto y dime qué días le parecen necesario.\"}"
+      },
+      {
+        "role": "user",
+        "content": "si"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Supongamos que tienes 5 obreros y construyen el muro en 12 días. Esto significa que cada día trabajan 5 personas, construyen una fracción de un muro. ¿Qué fracción de un muro construyen un día con solo 6 obreros?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"Una fracción mayor que 1/2.\"}, {\"id\": \"B\", \"texto\": \"Una fracción menor que 1/3.\"}, {\"id\": \"C\", \"texto\": \"Una fracción exactamente igual a 3/8.\"}], \"pregunta_cierre\": \"Decime cuál de las opciones coincide con el cálculo correcto.\"}"
+      },
+      {
+        "role": "user",
+        "content": "14.4"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Antes de resolverlo, revisa que el trabajo total es constante. Si 5 obreros completan el muro en 12 días, ¡esas son las horas de trabajo totales! Ahora, para 6 obreros, el tiempo por día será diferente. Usa la regla de tres: (trabajo total) / (número de obreros) = días necesarios.\", \"opciones\": [{\"id\": \"A\", \"texto\": \"6 días\"}, {\"id\": \"B\", \"texto\": \"9 días\"}, {\"id\": \"C\", \"texto\": \"4.5 días\"}], \"pregunta_cierre\": \"¿Cuál crees que es correcto según tus cálculos?\"}"
+      },
+      {
+        "role": "user",
+        "content": "por que?"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"La regla de tres funciona porque mantiene el valor total del trabajo constante. En 12 días, 5 obreros trabajan así: (5 obreros × 12 días) = trabajo total del muro. Ahora, si solo hay 6 obreros, el tiempo por día debe ser mayor para compensar menos trabajadores. Calcula: días × 6 obreros = 5 × 12 (trabajo total). ¡Verás qué fácil es!\", \"opciones\": [{\"id\": \"A\", \"texto\": \"No cambia nada, sigue en 12 días\"}, {\"id\": \"B\", \"texto\": \"Dobla el tiempo a 24 días\"}, {\"id\": \"C\", \"texto\": \"Sigue siendo 12 días\"}], \"pregunta_cierre\": \"¿Qué respuesta te parece más lógica?\"}"
+      },
+      {
+        "role": "user",
+        "content": "60"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Vamos a pensar con una manzana. Imagina que los 5 obreros construyen la manzana en 12 días. Si ahora solo tú tienes los 6 obreros, necesitarías hacer todo el trabajo más rápido. ¿Qué es lo mismo que multiplicar 5 por 12 (trabajo total) por 6 (personas)?\", \"opciones\": [{\"id\": \"A\", \"texto\": \"6 veces más lento\"}, {\"id\": \"B\", \"texto\": \"El mismo tiempo (12 días)\"}, {\"id\": \"C\", \"texto\": \"Dos días\"}], \"pregunta_cierre\": \"¿Cuál parece la solución más razonable?\"}"
+      },
+      {
+        "role": "user",
+        "content": "10"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"guia\": \"Imagina que la regla de tres es como una matrícula matemática: multiplica el trabajo original (5 × 12 = 60 unidades) por el número de obreros nuevos (6). Así que 60 unidades de trabajo / 6 obreros = ¡cuántos días necesitan! Ahora, entre estas opciones:\", \"opciones\": [{\"id\": \"A\", \"texto\": \"10 días\"}, {\"id\": \"B\", \"texto\": \"15 días\"}, {\"id\": \"C\", \"texto\": \"8 días\"}], \"pregunta_cierre\": \"Confirma cuál de estos tiempos te parece más práctico para el trabajo.\"}"
+      }
+    ],
+    "ground_truth": "10 dias (proporcion inversa: 5x12 = 60 dias-obrero; 60/6 = 10). 14.4 es regla de tres directa.",
+    "que_evalua": "Conversacion larga: el tutor debe detectar la proporcion directa (14.4), validar 60 y cerrar con 10.",
+    "invalidos": 0
+  }
+]
