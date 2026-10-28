@@ -20,7 +20,12 @@
 #                 opciones, pregunta_cierre). Es como correría on-device con llama.cpp.
 #    json_object  igual que NubeEngine en la nube: solo obliga a que sea JSON. Con EXAONE
 #                 1.2B esto dio 163/163 turnos inválidos (inventaba claves como "tipo").
-#  Los resultados de cada formato se guardan por separado en resultados_pedagogicos/<formato>/.
+#  MODO (default: directo)
+#    directo      enable_thinking=false, como la app hoy.
+#    thinking     el modelo razona antes de responder (<think>…</think>). El juez solo ve la
+#                 respuesta final. PRESUPUESTO limita los tokens de razonamiento (default 1024).
+#                 Ej.: MODO=thinking PRESUPUESTO=512 bash evaluar_pedagogico.sh F16 Q4_K_M-imat
+#  Cada combinación se guarda por separado en resultados_pedagogicos/<formato>[-thinking]/.
 #
 #  Es reanudable: los guiones y calificaciones ya hechos se omiten.
 #  Costo del juez: ~60 llamadas a GPT-5 por variante.
@@ -33,7 +38,10 @@ PROJ="$(cd "$HERE/../.." && pwd)"                  # lumi_project/
 BIN="$HERE/work/llama.cpp/build/bin"
 OUT="$HERE/work/gguf"
 FORMATO="${FORMATO:-schema}"
-RES="$HERE/resultados_pedagogicos/$FORMATO"
+MODO="${MODO:-directo}"
+PRESUPUESTO="${PRESUPUESTO:-1024}"   # tokens de razonamiento (solo MODO=thinking)
+SUFIJO=""; [ "$MODO" = thinking ] && SUFIJO="-thinking"
+RES="$HERE/resultados_pedagogicos/$FORMATO$SUFIJO"
 LOGS="$HERE/logs"
 PORT="${PORT:-8091}"
 SLOTS="${SLOTS:-4}"                 # conversaciones en paralelo
@@ -44,6 +52,7 @@ mkdir -p "$RES" "$LOGS"
 log(){ printf "\n\033[1;34m==> %s\033[0m\n" "$*"; }
 
 case "$FORMATO" in schema|json_object) ;; *) echo "FORMATO debe ser schema o json_object"; exit 1;; esac
+case "$MODO" in directo|thinking) ;; *) echo "MODO debe ser directo o thinking"; exit 1;; esac
 
 SERVER_PID=""
 parar_servidor(){ if [ -n "$SERVER_PID" ]; then kill "$SERVER_PID" 2>/dev/null || true; wait "$SERVER_PID" 2>/dev/null || true; fi; SERVER_PID=""; }
@@ -55,6 +64,15 @@ N_EVAL=$(wc -w <<<"$EVAL_IDS" | tr -d ' ')
 export LUMI_TUTOR_URL="http://127.0.0.1:$PORT/v1/chat/completions"
 export LUMI_TUTOR_TIMEOUT=300
 export LUMI_TUTOR_FORMATO="$FORMATO"
+if [ "$MODO" = thinking ]; then
+  export LUMI_TUTOR_MAX_TOKENS=$((PRESUPUESTO + 1500))   # razonamiento + respuesta JSON
+  THINK_ARGS=(--chat-template-kwargs '{"enable_thinking": true}' --reasoning-budget "$PRESUPUESTO"
+              --reasoning-budget-message " Ya tengo suficiente; respondo ahora en el formato pedido.")
+  CTX_SLOT=12288
+else
+  THINK_ARGS=(--chat-template-kwargs '{"enable_thinking": false}')
+  CTX_SLOT=8192
+fi
 
 levantar_servidor(){ # $1 = variante
   local modelo="$OUT/$NAME-$1.gguf"
@@ -63,9 +81,8 @@ levantar_servidor(){ # $1 = variante
   # La plantilla embebida en el GGUF usa {%- continue %} y el motor Jinja de llama.cpp descarta
   # el mensaje de sistema; esta copia es idéntica pero sin continue.
   "$BIN/llama-server" -m "$modelo" --port "$PORT" -ngl 99 \
-    -c $((8192 * SLOTS)) -np "$SLOTS" --jinja \
+    -c $((CTX_SLOT * SLOTS)) -np "$SLOTS" --jinja "${THINK_ARGS[@]}" \
     --chat-template-file "$HERE/exaone4_chat_template.jinja" \
-    --chat-template-kwargs '{"enable_thinking": false}' \
     > "$LOGS/server_$1.log" 2>&1 &
   SERVER_PID=$!
   for _ in $(seq 1 120); do
@@ -85,7 +102,7 @@ r = Tutor(sys.argv[1]).responder("¿Cuánto es 3 + 4?")
 if r["parsed"] is None:
     print(f"⚠  Prueba de humo: formato inválido ({r['motivo']}). Respuesta:\n{r['raw'][:400]}")
 else:
-    print(f"Prueba de humo OK ({r['segundos']} s): {r['parsed']['guia'][:120]}")
+    print(f"Prueba de humo OK ({r['segundos']} s, {r.get('tokens')} tokens): {r['parsed']['guia'][:120]}")
 PY
   ) || { echo "La prueba de humo falló; revisa $LOGS/server_$1.log"; exit 1; }
 }
@@ -98,7 +115,7 @@ correr_variante(){ # $1 = variante
   if [ "$hechos" -lt "$N_EVAL" ]; then
     levantar_servidor "$v"
     prueba_humo "$v"
-    log "Reproduciendo $N_EVAL guiones con $v · formato $FORMATO ($hechos ya hechos)"
+    log "Reproduciendo $N_EVAL guiones con $v · formato $FORMATO · modo $MODO ($hechos ya hechos)"
     local ids=(); for i in $EVAL_IDS; do ids+=(--id "$i"); done
     ( cd "$PROJ" && "$PY" tools/correr_guiones.py guiones.json "${ids[@]}" \
         --modelo "$NAME-$v" --workers "$SLOTS" -o "$guiones" ) || true
@@ -151,27 +168,31 @@ for carpeta in sorted(p for p in base.iterdir() if p.is_dir()) if base.exists() 
 
 criterios = ["no_revela_respuesta", "no_calcula_por_estudiante", "valida_correctamente",
              "aritmetica_correcta", "cierra_al_acertar", "evita_fallo_objetivo"]
-hdr = ["variante", "n", "score", "formato_invalido_%"] + criterios
+hdr = ["variante", "n", "score", "formato_invalido_%", "seg_por_turno", "tokens_por_turno"] + criterios
 filas_csv = []
 for nombre, (filas, convs) in fuentes.items():
     filas = [f for f in filas if f["id"] in ev]
     if not filas:
         continue
     score = sum(f["score"] for f in filas) / len(filas)
-    inval = "-"
+    inval = seg = tok = "-"
     if convs:
         convs = [c for c in convs if c["id"] in ev]
         turnos = sum(c.get("turnos", 0) for c in convs)
         inval = f"{100 * sum(c.get('invalidos', 0) for c in convs) / max(turnos, 1):.1f}"
+        ss = [x for c in convs for x in c.get("segundos_por_turno") or [] if x is not None]
+        tt = [x for c in convs for x in c.get("tokens_por_turno") or [] if x]
+        seg = f"{sum(ss) / len(ss):.1f}" if ss else "-"
+        tok = f"{sum(tt) / len(tt):.0f}" if tt else "-"
     pct = []
     for c in criterios:
         vs = [f["checklist"][c] for f in filas if (f.get("checklist") or {}).get(c) is not None]
         pct.append(f"{100 * sum(vs) / len(vs):.0f}" if vs else "-")
-    filas_csv.append([nombre, len(filas), f"{score:.3f}", inval] + pct)
+    filas_csv.append([nombre, len(filas), f"{score:.3f}", inval, seg, tok] + pct)
 
 if not filas_csv:
     print("Todavía no hay calificaciones."); sys.exit()
-corto = ["variante", "n", "score", "inval%", "no_revela", "no_calcula", "valida", "aritm", "cierra", "evita_fallo"]
+corto = ["variante", "n", "score", "inval%", "seg/turno", "tok/turno", "no_revela", "no_calcula", "valida", "aritm", "cierra", "evita_fallo"]
 ancho = [max(len(c), *(len(str(f[i])) for f in filas_csv)) for i, c in enumerate(corto)]
 print(" | ".join(c.ljust(a) for c, a in zip(corto, ancho)))
 for f in filas_csv:

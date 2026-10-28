@@ -12,7 +12,6 @@ FORMATO=json_object bash evaluar_pedagogico.sh F16   # control sin decodificaci�
 - Solo se exporta el modelo de texto (Qwen3.5-2B es de visión+lenguaje; Lumi no usa imágenes).
 - Si existe `../exaone4/work/llama.cpp`, se reutiliza: ambos modelos quedan con el mismo commit.
 - Disco: ~22 GB libres (el `.kld` de referencia pesa ~4 GB por el vocabulario de 248k tokens).
-- Renderizado v2: el system prompt va en 1 conversación por categoría en `calib.txt` y en ninguna de `eval.txt`
-  (antes era el 85 % del texto). La evaluación pedagógica sí usa el prompt completo.
+- Renderizado v3: en `calib.txt` todas las conversaciones llevan el system prompt y la imatrix usa contexto de 4096 tokens, así cada respuesta se calibra con su prompt delante (v1 usaba 512 y el prompt nunca quedaba junto a la respuesta). `eval.txt` va sin prompt para que la PPL/KLD mida el diálogo; el seguimiento del prompt se mide en la evaluación pedagógica.
 - Resultados: `resultados_qwen.csv`, `resultados_pedagogicos.csv`, `logs/`.
 - Licencia del modelo: Apache 2.0.

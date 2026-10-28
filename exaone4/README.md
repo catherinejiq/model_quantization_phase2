@@ -24,6 +24,6 @@ Notas
 - La partición es idéntica a la de `calibracion.json` (mismos ids), así que la comparación con la nube sigue siendo válida.
 - `data/fuente.txt` guarda el SHA-256 del archivo de calibración: si cambia, el script rehace imatrix, variantes `-imat` y evaluación.
 - Formato `schema`: llama-server restringe la salida al esquema JSON de la app. En la corrida anterior con `json_object`, EXAONE inventó claves propias en 163/163 turnos.
-- Renderizado v2: el system prompt va en 1 conversación por categoría en `calib.txt` y en ninguna de `eval.txt` (antes era el 85 % del texto, así que la imatrix y la PPL/KLD medían sobre todo el prompt). Al volver a correr el script se rehacen solo los datos, la imatrix, las variantes `-imat` y la evaluación.
+- Renderizado v3: en `calib.txt` todas las conversaciones llevan el system prompt y la imatrix usa contexto de 4096 tokens, así cada respuesta se calibra con su prompt delante (v1 usaba 512 y el prompt nunca quedaba junto a la respuesta). `eval.txt` va sin prompt para que la PPL/KLD mida el diálogo; el seguimiento del prompt se mide en la evaluación pedagógica.
 - Versión de llama.cpp usada: `logs/llama_cpp_version.txt`.
 - Licencia del modelo: EXAONE AI Model License 1.2 – NC (investigación/educación, no comercial).

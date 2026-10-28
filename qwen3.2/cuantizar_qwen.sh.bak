@@ -3,7 +3,7 @@
 #  Lumi · Fase 2 · Cuantización de Qwen3.5-2B (llama.cpp / GGUF)
 #  Correr en la Terminal de macOS (Apple Silicon, usa Metal), desde esta carpeta:
 #
-#     cd ~/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/qwen3.5
+#     cd ~/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/qwen3.2
 #     bash cuantizar_qwen.sh           # pipeline completo (~60-90 min)
 #     bash cuantizar_qwen.sh eval      # solo re-evaluar
 #     bash cuantizar_qwen.sh limpiar   # borra intermedios pesados (deja los GGUF finales)
@@ -25,7 +25,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 PROJ="$(cd "$HERE/../.." && pwd)"                  # lumi_project/
 CALIB_JSON="${CALIB_JSON:-$PROJ/calibracion_corregido.json}"
 DART="$PROJ/flutter_app/lib/data/services/tutor/nube_engine.dart"
-RENDER_V="v2"                     # versión del renderizado (ver prepare_data)
+RENDER_V="v3"                     # versión del renderizado (ver prepare_data)
 
 WORK="$HERE/work"
 # Reutiliza llama.cpp y el entorno de Python de EXAONE si ya existen (mismo commit para ambos)
@@ -41,18 +41,34 @@ OUT="$WORK/gguf"
 DATA="$HERE/data"
 LOGS="$HERE/logs"
 THREADS="${THREADS:-4}"
+IMATRIX_CTX="${IMATRIX_CTX:-4096}"   # cabe el system prompt (~1.3k tokens) + la conversación completa
 EVAL_CHUNKS="${EVAL_CHUNKS:-}"    # vacío = todo data/eval.txt
-VARIANTES=(Q8_0 Q6_K Q5_K_M-imat Q4_K_M Q4_K_M-imat Q4_0 Q4_0-imat)
+# se pueden elegir:  VARIANTES="Q8_0 Q4_K_M Q4_K_M-imat Q4_0-imat" bash ...
+read -r -a VARIANTES <<< "${VARIANTES:-Q8_0 Q6_K Q5_K_M-imat Q4_K_M Q4_K_M-imat Q4_0 Q4_0-imat}"
 
 mkdir -p "$WORK" "$OUT" "$DATA" "$LOGS"
 log(){ printf "\n\033[1;34m==> %s\033[0m\n" "$*"; }
 
 check_disk(){
-  local libre_gb
+  # Estimación según lo que se va a generar (GB): F16 + variantes que faltan + .kld (~0.13 GB por bloque)
+  local libre_gb nec
   libre_gb=$(df -g "$HERE" | awk 'NR==2{print $4}')
-  echo "Espacio libre: ${libre_gb} GB (se necesitan ~22 GB; el .kld de Qwen pesa ~4 GB por su vocabulario de 248k)"
-  if [ "$libre_gb" -lt 22 ]; then
-    echo "⚠  Poco espacio. Libera disco o corre con EVAL_CHUNKS=15 para reducir el archivo .kld."
+  nec=$(python3 - "$OUT" "$NAME" "${EVAL_CHUNKS:-35}" "${VARIANTES[@]}" <<'PY2'
+import sys, os
+out, name, chunks, vs = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4:]
+gb = {"Q8_0": 2.0, "Q6_K": 1.6, "Q5_K_M": 1.4, "Q4_K_M": 1.2, "Q4_0": 1.1}
+falta = lambda f: not os.path.exists(os.path.join(out, f))
+base = lambda v: v[:-5] if v.endswith("-imat") else v
+f16 = 3.8 if falta(f"{name}-F16.gguf") else 0
+conv = 4.5 + f16 if f16 else 0                       # pico durante la conversión (safetensors + F16)
+var = sum(gb.get(base(v), 1.5) for v in vs if falta(f"{name}-{v}.gguf"))
+kld = 0.13 * chunks if falta(f"{name}-F16.kld") else 0
+print(round(max(conv, f16 + var + kld) + 1))         # +1 GB de margen
+PY2
+)
+  echo "Espacio libre: ${libre_gb} GB · se necesitan ~${nec} GB para estas variantes"
+  if [ "$libre_gb" -lt "$nec" ]; then
+    echo "⚠  Poco espacio. Libera disco, quita variantes (VARIANTES=...) o baja EVAL_CHUNKS."
     read -r -p "¿Continuar de todas formas? [s/N] " r; [[ "$r" =~ ^[sS]$ ]] || exit 1
   fi
 }
@@ -124,6 +140,7 @@ convert(){
     python "$LLAMA/convert_hf_to_gguf.py" "$HF_DIR" --outtype f16 ${extra[@]+"${extra[@]}"} \
       --outfile "$OUT/$NAME-F16.gguf.tmp" 2>&1 | tee "$LOGS/convert.log" | tail -5
     mv "$OUT/$NAME-F16.gguf.tmp" "$OUT/$NAME-F16.gguf"
+    rm -f "$HF_DIR"/*.safetensors && echo "Safetensors borrados (ya está el F16)"
   fi
 }
 
@@ -168,16 +185,15 @@ def render(c, con_sistema):
 
 assert prompt[:80] in render(train[0], True), "El system prompt no quedó en el texto renderizado: revisa la plantilla"
 
-# Renderizado v2. El system prompt (~1.3k tokens) repetido en cada conversación era el 85 % del
-# texto: la imatrix y la PPL/KLD medían sobre todo el prompt y no las respuestas del tutor.
-#   calib: la primera conversación de cada categoría lleva el system prompt; el resto no.
-#   eval:  sin system prompt → PPL y KLD miden solo el diálogo (preguntas + respuestas).
-# La evaluación pedagógica sí usa el prompt completo, como la app.
-con_sys = {}
-for c in train:
-    con_sys.setdefault(c.get("categoria"), c["id"])
-con_sys = set(con_sys.values())
-textos = {"calib": "\n\n".join(render(c, c["id"] in con_sys) for c in train),
+# Renderizado v3.
+#   calib: TODAS las conversaciones llevan el system prompt, como en la app, y la imatrix se
+#          calcula con contexto de 4096 tokens: cada respuesta del tutor se procesa con su prompt
+#          delante, que es justo la capacidad que hay que proteger al cuantizar.
+#          (v1 usaba contexto de 512: el prompt, de ~1.3k tokens, nunca quedaba junto a la respuesta.)
+#   eval:  sin system prompt → PPL y KLD miden el diálogo; si se incluyera, la mayoría de los
+#          tokens puntuados serían copias del prompt, fáciles de predecir, y la métrica se inflaría.
+# Que el modelo SIGA el prompt se mide en la evaluación pedagógica (prompt completo + juez).
+textos = {"calib": "\n\n".join(render(c, True) for c in train),
           "eval":  "\n\n".join(render(c, False) for c in test)}
 for nombre, txt in textos.items():
     (dst / f"{nombre}.txt").write_text(txt, encoding="utf-8")
@@ -204,7 +220,7 @@ imatrix(){
   [ -f "$OUT/$NAME.imatrix" ] && { log "imatrix ya existe"; return; }
   log "Calculando imatrix con las conversaciones corregidas de Lumi"
   "$BIN/llama-imatrix" -m "$OUT/$NAME-F16.gguf" -f "$DATA/calib.txt" \
-    -o "$OUT/$NAME.imatrix.tmp" -c 512 -ngl 99 -t "$THREADS" 2>&1 | tee "$LOGS/imatrix.log"
+    -o "$OUT/$NAME.imatrix.tmp" -c "$IMATRIX_CTX" -b "$IMATRIX_CTX" -ngl 99 -t "$THREADS" 2>&1 | tee "$LOGS/imatrix.log"
   mv "$OUT/$NAME.imatrix.tmp" "$OUT/$NAME.imatrix"
 }
 
@@ -222,13 +238,9 @@ q(){ # $1 tipo · $2 sufijo · $3 usar imatrix (0/1)
   tail -2 "$LOGS/quantize_$2.log"
 }
 quantize(){
-  q Q8_0   Q8_0        0
-  q Q6_K   Q6_K        0
-  q Q5_K_M Q5_K_M-imat 1
-  q Q4_K_M Q4_K_M      0
-  q Q4_K_M Q4_K_M-imat 1
-  q Q4_0   Q4_0        0
-  q Q4_0   Q4_0-imat   1
+  for v in "${VARIANTES[@]}"; do
+    if [ "${v%-imat}" != "$v" ]; then q "${v%-imat}" "$v" 1; else q "$v" "$v" 0; fi
+  done
 }
 
 # 5. Evaluar en conversaciones NO vistas: PPL, KL vs F16, velocidad CPU, tamaño

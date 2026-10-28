@@ -1,0 +1,90 @@
+0.03.307.812 I cmn          init: llama threadpool init, n_threads = 4
+0.03.307.881 I 
+0.03.307.930 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.03.307.933 I compute_imatrix: tokenizing the input ..
+0.03.665.619 I compute_imatrix: tokenization took 357.68 ms
+0.03.665.669 I compute_imatrix: computing over 97 chunks, n_ctx=4096, batch_size=4096, n_seq=1
+0.23.720.664 I compute_imatrix: 20.06 seconds per pass - ETA 32.42 minutes
+[1]1.0848,[2]1.1426,[3]1.1132,[4]1.1242,[5]1.1081,[6]1.1273,[7]1.1302,[8]1.1376,[9]1.1344,2.55.987.194 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+2.55.987.195 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+2.55.995.271 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+2.55.996.249 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+2.55.996.374 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+2.55.997.176 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[10]1.1389,[11]1.1413,[12]1.1492,[13]1.1491,[14]1.1521,[15]1.1540,[16]1.1545,[17]1.1554,[18]1.1508,[19]1.1508,5.29.914.057 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+5.29.914.058 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+5.29.921.058 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+5.29.921.946 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+5.29.922.054 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+5.29.922.743 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[20]1.1488,[21]1.1500,[22]1.1463,[23]1.1451,[24]1.1458,[25]1.1433,[26]1.1421,[27]1.1418,[28]1.1411,[29]1.1429,8.02.284.630 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+8.02.284.631 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+8.02.291.724 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+8.02.292.638 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+8.02.292.757 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+8.02.293.486 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[30]1.1410,[31]1.1418,[32]1.1415,[33]1.1392,[34]1.1387,[35]1.1391,[36]1.1362,[37]1.1383,[38]1.1374,[39]1.1375,10.44.631.354 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+10.44.631.355 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+10.44.638.354 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+10.44.639.214 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+10.44.639.322 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+10.44.640.008 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[40]1.1373,[41]1.1374,[42]1.1386,[43]1.1410,[44]1.1397,[45]1.1427,[46]1.1405,[47]1.1418,[48]1.1418,[49]1.1447,13.18.671.031 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+13.18.671.032 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+13.18.678.152 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+13.18.679.072 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+13.18.679.201 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+13.18.679.926 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[50]1.1471,[51]1.1460,[52]1.1472,[53]1.1452,[54]1.1441,[55]1.1427,[56]1.1457,[57]1.1459,[58]1.1477,[59]1.1465,15.52.074.809 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+15.52.074.810 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+15.52.081.836 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+15.52.082.810 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+15.52.082.924 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+15.52.083.650 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[60]1.1453,[61]1.1447,[62]1.1461,[63]1.1483,[64]1.1484,[65]1.1485,[66]1.1481,[67]1.1477,[68]1.1490,[69]1.1477,18.25.714.803 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+18.25.714.804 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+18.25.721.870 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+18.25.722.793 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+18.25.722.914 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+18.25.723.675 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[70]1.1477,[71]1.1480,[72]1.1496,[73]1.1491,[74]1.1498,[75]1.1482,[76]1.1470,[77]1.1468,[78]1.1476,[79]1.1488,20.59.868.132 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+20.59.868.134 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+20.59.875.279 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+20.59.876.264 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+20.59.876.382 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+20.59.877.118 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[80]1.1505,[81]1.1535,[82]1.1549,[83]1.1544,[84]1.1545,[85]1.1535,[86]1.1543,[87]1.1556,[88]1.1559,[89]1.1566,23.33.623.660 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+23.33.623.661 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+23.33.630.744 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+23.33.631.709 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+23.33.631.825 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+23.33.632.557 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+[90]1.1558,[91]1.1566,[92]1.1560,[93]1.1569,[94]1.1574,[95]1.1573,[96]1.1589,[97]1.1599,
+Final estimate: PPL = 1.1599 +/- 0.00213
+25.36.960.032 W 
+save_imatrix: saving imatrix using GGUF format with a different suffix than .gguf
+25.36.960.034 W save_imatrix: if you want the previous imatrix format, use --output-format dat
+25.36.969.568 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_k.weight'
+25.36.970.765 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_output.weight'
+25.36.970.910 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_q.weight'
+25.36.971.915 W compute_tensor_statistics: no preceding-layer tensor for 'blk.3.attn_v.weight'
+
+

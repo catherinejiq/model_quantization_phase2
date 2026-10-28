@@ -27,7 +27,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 PROJ="$(cd "$HERE/../.." && pwd)"                  # lumi_project/
 CALIB_JSON="${CALIB_JSON:-$PROJ/calibracion_corregido.json}"
 DART="$PROJ/flutter_app/lib/data/services/tutor/nube_engine.dart"
-RENDER_V="v2"                     # versión del renderizado (ver prepare_data)
+RENDER_V="v3"                     # versión del renderizado (ver prepare_data)
 
 WORK="$HERE/work"                 # todo lo pesado vive aquí (está en .gitignore)
 LLAMA="$WORK/llama.cpp"
@@ -38,8 +38,10 @@ DATA="$HERE/data"                 # textos renderizados + ids de la partición (
 LOGS="$HERE/logs"
 VENV="$WORK/.venv"
 THREADS="${THREADS:-4}"
+IMATRIX_CTX="${IMATRIX_CTX:-4096}"   # cabe el system prompt (~1.3k tokens) + la conversación completa
 EVAL_CHUNKS="${EVAL_CHUNKS:-}"    # vacío = todo data/eval.txt
-VARIANTES=(Q8_0 Q6_K Q5_K_M-imat Q4_K_M Q4_K_M-imat Q4_0 Q4_0-imat)
+# se pueden elegir:  VARIANTES="Q8_0 Q4_K_M Q4_K_M-imat Q4_0-imat" bash ...
+read -r -a VARIANTES <<< "${VARIANTES:-Q8_0 Q6_K Q5_K_M-imat Q4_K_M Q4_K_M-imat Q4_0 Q4_0-imat}"
 
 mkdir -p "$WORK" "$OUT" "$DATA" "$LOGS"
 log(){ printf "\n\033[1;34m==> %s\033[0m\n" "$*"; }
@@ -119,6 +121,7 @@ convert(){
     log "Convirtiendo a GGUF F16"
     python "$LLAMA/convert_hf_to_gguf.py" "$HF_DIR" --outtype f16 --outfile "$OUT/$NAME-F16.gguf.tmp"
     mv "$OUT/$NAME-F16.gguf.tmp" "$OUT/$NAME-F16.gguf"
+    rm -f "$HF_DIR"/*.safetensors && echo "Safetensors borrados (ya está el F16)"
   fi
 }
 
@@ -180,16 +183,15 @@ def render(c, con_sistema):
 
 assert prompt[:80] in render(train[0], True), "El system prompt no quedó en el texto renderizado: revisa la plantilla"
 
-# Renderizado v2. El system prompt (~1.3k tokens) repetido en cada conversación era el 85 % del
-# texto: la imatrix y la PPL/KLD medían sobre todo el prompt y no las respuestas del tutor.
-#   calib: la primera conversación de cada categoría lleva el system prompt; el resto no.
-#   eval:  sin system prompt → PPL y KLD miden solo el diálogo (preguntas + respuestas).
-# La evaluación pedagógica sí usa el prompt completo, como la app.
-con_sys = {}
-for c in train:
-    con_sys.setdefault(c.get("categoria"), c["id"])
-con_sys = set(con_sys.values())
-textos = {"calib": "\n\n".join(render(c, c["id"] in con_sys) for c in train),
+# Renderizado v3.
+#   calib: TODAS las conversaciones llevan el system prompt, como en la app, y la imatrix se
+#          calcula con contexto de 4096 tokens: cada respuesta del tutor se procesa con su prompt
+#          delante, que es justo la capacidad que hay que proteger al cuantizar.
+#          (v1 usaba contexto de 512: el prompt, de ~1.3k tokens, nunca quedaba junto a la respuesta.)
+#   eval:  sin system prompt → PPL y KLD miden el diálogo; si se incluyera, la mayoría de los
+#          tokens puntuados serían copias del prompt, fáciles de predecir, y la métrica se inflaría.
+# Que el modelo SIGA el prompt se mide en la evaluación pedagógica (prompt completo + juez).
+textos = {"calib": "\n\n".join(render(c, True) for c in train),
           "eval":  "\n\n".join(render(c, False) for c in test)}
 for nombre, txt in textos.items():
     (dst / f"{nombre}.txt").write_text(txt, encoding="utf-8")
@@ -204,7 +206,7 @@ sha = hashlib.sha256(open(calib, "rb").read()).hexdigest()
 (dst / "fuente.txt").write_text(f"archivo: {pathlib.Path(calib).name}\nsha256: {sha}\nrender: {render_v}\n",
                                 encoding="utf-8")
 
-otra = dst.parent.parent / "qwen3.5" / "data" / "particion.json"
+otra = dst.parent.parent / "qwen3.2" / "data" / "particion.json"
 if otra.exists():
     igual = json.load(open(otra))["eval"] == sorted(c["id"] for c in test)
     print("Partición igual a la de Qwen3.5:", "sí" if igual else "NO ⚠")
@@ -218,7 +220,7 @@ imatrix(){
   [ -f "$OUT/$NAME.imatrix" ] && { log "imatrix ya existe"; return; }
   log "Calculando imatrix con las conversaciones corregidas de Lumi"
   "$BIN/llama-imatrix" -m "$OUT/$NAME-F16.gguf" -f "$DATA/calib.txt" \
-    -o "$OUT/$NAME.imatrix.tmp" -c 512 -ngl 99 -t "$THREADS" 2>&1 | tee "$LOGS/imatrix.log"
+    -o "$OUT/$NAME.imatrix.tmp" -c "$IMATRIX_CTX" -b "$IMATRIX_CTX" -ngl 99 -t "$THREADS" 2>&1 | tee "$LOGS/imatrix.log"
   mv "$OUT/$NAME.imatrix.tmp" "$OUT/$NAME.imatrix"
 }
 
@@ -239,13 +241,9 @@ q(){ # $1 tipo · $2 sufijo · $3 usar imatrix (0/1)
   tail -2 "$LOGS/quantize_$2.log"
 }
 quantize(){
-  q Q8_0   Q8_0        0   # control: casi sin pérdida → valida la medición
-  q Q6_K   Q6_K        0
-  q Q5_K_M Q5_K_M-imat 1
-  q Q4_K_M Q4_K_M      0
-  q Q4_K_M Q4_K_M-imat 1
-  q Q4_0   Q4_0        0
-  q Q4_0   Q4_0-imat   1
+  for v in "${VARIANTES[@]}"; do
+    if [ "${v%-imat}" != "$v" ]; then q "${v%-imat}" "$v" 1; else q "$v" "$v" 0; fi
+  done
 }
 
 # -----------------------------------------------------------------------------

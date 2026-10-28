@@ -1,0 +1,3 @@
+variante,n,score,formato_invalido_%,seg_por_turno,tokens_por_turno,no_revela_respuesta,no_calcula_por_estudiante,valida_correctamente,aritmetica_correcta,cierra_al_acertar,evita_fallo_objetivo
+nube (Qwen3-VL-235B),59,0.927,-,-,-,93,98,100,100,64,92
+Q4_0-imat [schema],60,0.431,0.0,12.7,137,70,68,26,34,5,27
