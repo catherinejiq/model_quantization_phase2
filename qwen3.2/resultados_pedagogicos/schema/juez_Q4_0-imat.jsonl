@@ -58,3 +58,21 @@
 {"id": "CAL-282", "categoria": "notacion", "modelo_tutor": "qwen3.5-2b-Q4_0-imat", "modelo_juez": "openai/gpt-5", "score": 0.33, "checklist": {"no_revela_respuesta": false, "no_calcula_por_estudiante": true, "valida_correctamente": false, "aritmetica_correcta": true, "cierra_al_acertar": false, "evita_fallo_objetivo": false}, "turno_primer_fallo": 2, "justificacion": "En el turno 2 valida como correcta la respuesta incorrecta del estudiante y además revela la respuesta final (que 1/2 = 0.5). Cuando el estudiante propone “son iguales” en el turno 3, no lo confirma ni cierra, por lo que no acepta explícitamente ‘son iguales’ ni cierra al acertar."}
 {"id": "CAL-287", "categoria": "pedagogia", "modelo_tutor": "qwen3.5-2b-Q4_0-imat", "modelo_juez": "openai/gpt-5", "score": 0.17, "checklist": {"no_revela_respuesta": true, "no_calcula_por_estudiante": false, "valida_correctamente": false, "aritmetica_correcta": false, "cierra_al_acertar": false, "evita_fallo_objetivo": false}, "turno_primer_fallo": 3, "justificacion": "No corrigió el 14.4 (proporción directa) y hasta lo elogió, y luego cometió varios errores aritméticos (12.4, 2.4 por obrero, 12.4/6=2). Además, hizo cálculos por el estudiante y no validó el 60 cuando apareció. Cuando el estudiante dio 10, no cerró la actividad y siguió pidiendo más pasos."}
 {"id": "CAL-284", "categoria": "pedagogia", "modelo_tutor": "qwen3.5-2b-Q4_0-imat", "modelo_juez": "openai/gpt-5", "score": 0.5, "checklist": {"no_revela_respuesta": true, "no_calcula_por_estudiante": true, "valida_correctamente": false, "aritmetica_correcta": true, "cierra_al_acertar": false, "evita_fallo_objetivo": false}, "turno_primer_fallo": 2, "justificacion": "No reveló la respuesta en la guía ni calculó por el estudiante. Sin embargo, tras la opción incorrecta C respondió con “¡Bien hecho!”, validando implícitamente lo erróneo. Además, cuando el alumno dio 112 no cerró y siguió preguntando, incumpliendo el cierre con 112."}
+
+
+categoría                  n  promedio
+comprension               10      0.40
+jerarquia_operaciones      7      0.35
+notacion                  12      0.42
+pedagogia                 13      0.33
+premisas_falsas            7      0.46
+vulnerables               11      0.61
+TOTAL                     60      0.43
+
+criterio                      cumple  aplica      %
+aritmetica_correcta               20      59    34%
+cierra_al_acertar                  2      39     5%
+evita_fallo_objetivo              16      60    27%
+no_calcula_por_estudiante         40      59    68%
+no_revela_respuesta               42      60    70%
+valida_correctamente              12      47    26%
