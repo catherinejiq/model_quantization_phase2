@@ -1,42 +1,42 @@
 ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
 ggml_metal_library_init: using embedded metal library
-ggml_metal_library_compile_all: compiled 'fa_aux' library in 0.002 sec
+ggml_metal_library_compile_all: compiled 'fa_aux' library in 0.003 sec
 ggml_metal_library_compile_all: compiled 'fa_f16' library in 0.003 sec
-ggml_metal_library_compile_all: compiled 'fa_f32' library in 0.004 sec
-ggml_metal_library_compile_all: compiled 'fa_q4_0' library in 0.015 sec
-ggml_metal_library_compile_all: compiled 'fa_q4_1' library in 0.014 sec
+ggml_metal_library_compile_all: compiled 'fa_f32' library in 0.002 sec
+ggml_metal_library_compile_all: compiled 'fa_q4_0' library in 0.013 sec
+ggml_metal_library_compile_all: compiled 'fa_q4_1' library in 0.004 sec
 ggml_metal_library_compile_all: compiled 'fa_q5_0' library in 0.004 sec
-ggml_metal_library_compile_all: compiled 'fa_q5_1' library in 0.008 sec
-ggml_metal_library_compile_all: compiled 'fa_q8_0' library in 0.009 sec
-ggml_metal_library_compile_all: compiled 'fa_tensor' library in 0.003 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_f16' library in 0.007 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_f32' library in 0.013 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_q4_0' library in 0.033 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_q4_1' library in 0.030 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_q5_0' library in 0.027 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_q5_1' library in 0.024 sec
-ggml_metal_library_compile_all: compiled 'fa_vec_q8_0' library in 0.022 sec
-ggml_metal_library_compile_all: compiled 'mul_mv' library in 0.011 sec
-ggml_metal_library_compile_all: compiled 'mul_mv_mma' library in 0.017 sec
-ggml_metal_library_compile_all: compiled 'mul_mm' library in 0.019 sec
-ggml_metal_library_compile_all: compiled 'quantize' library in 0.012 sec
-ggml_metal_library_compile_all: compiled 'softmax' library in 0.019 sec
-ggml_metal_library_compile_all: compiled 'norm' library in 0.008 sec
-ggml_metal_library_compile_all: compiled 'unary' library in 0.007 sec
-ggml_metal_library_compile_all: compiled 'binbcast' library in 0.007 sec
-ggml_metal_library_compile_all: compiled 'reduce' library in 0.031 sec
-ggml_metal_library_compile_all: compiled 'tri' library in 0.031 sec
-ggml_metal_library_compile_all: compiled 'ssm' library in 0.028 sec
-ggml_metal_library_compile_all: compiled 'wkv' library in 0.028 sec
-ggml_metal_library_compile_all: compiled 'gated_delta_net' library in 0.018 sec
-ggml_metal_library_compile_all: compiled 'solve_tri' library in 0.026 sec
-ggml_metal_library_compile_all: compiled 'rope' library in 0.017 sec
-ggml_metal_library_compile_all: compiled 'conv' library in 0.011 sec
-ggml_metal_library_compile_all: compiled 'upscale' library in 0.016 sec
-ggml_metal_library_compile_all: compiled 'argsort' library in 0.011 sec
-ggml_metal_library_compile_all: compiled 'pool' library in 0.008 sec
-ggml_metal_library_compile_all: compiled 'misc' library in 0.008 sec
-ggml_metal_library_compile_all: loaded 36 libraries from embedded data in 0.034 sec (max single = 0.033 sec)
+ggml_metal_library_compile_all: compiled 'fa_q5_1' library in 0.021 sec
+ggml_metal_library_compile_all: compiled 'fa_q8_0' library in 0.020 sec
+ggml_metal_library_compile_all: compiled 'fa_tensor' library in 0.013 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_f16' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_f32' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q4_0' library in 0.016 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q4_1' library in 0.018 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q5_0' library in 0.020 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q5_1' library in 0.014 sec
+ggml_metal_library_compile_all: compiled 'fa_vec_q8_0' library in 0.010 sec
+ggml_metal_library_compile_all: compiled 'mul_mv' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'mul_mv_mma' library in 0.006 sec
+ggml_metal_library_compile_all: compiled 'mul_mm' library in 0.023 sec
+ggml_metal_library_compile_all: compiled 'quantize' library in 0.021 sec
+ggml_metal_library_compile_all: compiled 'softmax' library in 0.006 sec
+ggml_metal_library_compile_all: compiled 'norm' library in 0.006 sec
+ggml_metal_library_compile_all: compiled 'unary' library in 0.021 sec
+ggml_metal_library_compile_all: compiled 'binbcast' library in 0.020 sec
+ggml_metal_library_compile_all: compiled 'reduce' library in 0.019 sec
+ggml_metal_library_compile_all: compiled 'tri' library in 0.017 sec
+ggml_metal_library_compile_all: compiled 'ssm' library in 0.017 sec
+ggml_metal_library_compile_all: compiled 'wkv' library in 0.017 sec
+ggml_metal_library_compile_all: compiled 'gated_delta_net' library in 0.012 sec
+ggml_metal_library_compile_all: compiled 'solve_tri' library in 0.011 sec
+ggml_metal_library_compile_all: compiled 'rope' library in 0.011 sec
+ggml_metal_library_compile_all: compiled 'conv' library in 0.021 sec
+ggml_metal_library_compile_all: compiled 'upscale' library in 0.011 sec
+ggml_metal_library_compile_all: compiled 'argsort' library in 0.007 sec
+ggml_metal_library_compile_all: compiled 'pool' library in 0.019 sec
+ggml_metal_library_compile_all: compiled 'misc' library in 0.007 sec
+ggml_metal_library_compile_all: loaded 36 libraries from embedded data in 0.024 sec (max single = 0.023 sec)
 ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
 ggml_metal_device_init: GPU name:   MTL0 (Apple M3)
 ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
@@ -99,7 +99,7 @@ llama_model_quantize_impl: have importance matrix data with 210 entries
 [   3/ 333] token_embd.weight                    - [  2048, 102400,      1,      1], type =    f16, 
 ====== llama_model_quantize_impl: did not find weights for token_embd.weight
 converting to q6_K .. load_imatrix: imatrix datasets=['/Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/exaone4/data/calib.txt']
-load_imatrix: loaded 210 importance matrix entries from /Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/exaone4/work/gguf/exaone4-1.2b.imatrix computed on 949 chunks
+load_imatrix: loaded 210 importance matrix entries from /Users/catherinejaque/Desktop/ProyectoGrado/proyecto/lumi_project/model_quantization_phase2/exaone4/work/gguf/exaone4-1.2b.imatrix computed on 118 chunks
 prepare_imatrix: have 210 importance matrix entries
 size =   400.00 MiB ->   164.06 MiB
 [   4/ 333] blk.0.attn_k.weight                  - [  2048,    512,      1,      1], type =    f16, converting to q5_K .. size =     2.00 MiB ->     0.69 MiB
@@ -435,5 +435,5 @@ size =   400.00 MiB ->   164.06 MiB
 llama_model_quantize_impl: model size  =  2440.49 MiB (16.00 BPW)
 llama_model_quantize_impl: quant size  =   882.54 MiB (5.79 BPW)
 
-llama_quantize: quantize time = 45733.15 ms
-llama_quantize:    total time = 45733.15 ms
+llama_quantize: quantize time = 46689.93 ms
+llama_quantize:    total time = 46689.93 ms

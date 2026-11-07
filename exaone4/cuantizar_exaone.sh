@@ -132,7 +132,7 @@ prepare_data(){
   source "$VENV/bin/activate"
   if [ -f "$DATA/calib.txt" ] && [ -f "$DATA/eval.txt" ]; then log "Datos ya preparados"; return; fi
   [ -f "$HF_DIR/tokenizer_config.json" ] || hf download "$MODEL_ID" --local-dir "$HF_DIR" \
-      --include "tokenizer*" "*.json"
+      --include "tokenizer*" "*.json" "*.jinja"
   log "Renderizando $(basename "$CALIB_JSON") → data/calib.txt + data/eval.txt"
   python - "$CALIB_JSON" "$DART" "$HF_DIR" "$DATA" "$RENDER_V" <<'PY'
 import json, re, random, sys, pathlib, hashlib
